@@ -5,10 +5,26 @@
 
 <!-- badges: start -->
 
-<!-- badges: end -->
+[![Project Status: WIP – Initial development is in progress, but there
+has not yet been a stable, usable release suitable for the
+public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Travis build
+status](https://travis-ci.org/Rekyt/bnfimage.svg?branch=master)](https://travis-ci.org/Rekyt/bnfimage)
+[![codecov](https://codecov.io/gh/Rekyt/bnfimage/branch/master/graph/badge.svg)](https://codecov.io/gh/Rekyt/bnfimage)
+[![CRAN-version](https://www.r-pkg.org/badges/version/bnfimage)](https://cran.r-project.org/package=bnfimage)
 
 `bnfimage` is an R client for the [BnF images
-API](http://api.bnf.fr/api-iiif-de-recuperation-des-images-de-gallica)
+API](http://api.bnf.fr/api-iiif-de-recuperation-des-images-de-gallica).
+The Bibliothèque Nationale de France (BnF), has a online repository
+called [Gallica](https://gallica.bnf.fr/) contaning millions of
+documents that are scanned. The BnF now offers an API to access all the
+images programmatically, and this package allows you to access it
+through R.
+
+The BnF Image API is implemented following the [International Image
+Interoperability Framework](https://iiif.io/) (IIIF) with Image API
+implemented using v.1.1, the Presentation API implemented using v.2.0,
+and the Search API not yet implemented.
 
 ## Installation
 
