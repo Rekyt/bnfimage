@@ -1,0 +1,19 @@
+Package: bnfimage
+Title: Client for BnF Image API
+Version: 0.0.1
+Authors@R: 
+    person("Matthias", "Grenié",
+           email = "matthias.grenie@gmail.com",
+           role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-4659-7522"))
+Description: Provides an R client for the BnF image API.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    httr,
+    vcr
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
+Suggests: 
+    testthat (>= 2.1.0)
