@@ -5,8 +5,8 @@
 \title{Retrieve image from BNF}
 \usage{
 bi_image(identifier = NULL, region = c(0L, 0L, 500L, 500L),
-  size = "full", rotation = 0, quality = c("native", "bitonal"),
-  format = c("jpg", "png"))
+  size = "full", rotation = 0, quality = c("native", "color", "gray",
+  "bitonal"), format = c("jpg", "tif", "png", "gif", "jp2", "pdf"))
 }
 \arguments{
 \item{identifier}{[\code{character(1)}]\cr{}
@@ -25,13 +25,19 @@ two integers that defines the size of the final image}
 an integer that defines the rotation in degrees to apply
 to the final image (\code{0} for no rotation)}
 
-\item{quality}{[\code{character(1)}]\cr{}
-\code{"native"} for native colors of the image or
-\code{"bitonal"} for levels of gray}
+\item{quality}{[\code{character(1)}]\cr{}\preformatted{              * `"native"` for native colors of the image or,
+              * `"color"` for the image in color,
+              * `"gray"` for levels of gray,
+              * `"bitonal"` for only black and white pixels.
+}}
 
-\item{format}{[\code{character(1)}]\cr{}
-\code{"jpg"} for JPEG image
-\code{"png"} for PNG image}
+\item{format}{[\code{character(1)}]\cr{}\preformatted{              * `"jpg"` for JPEG image,
+              * `"tif"` for TIFF image,
+              * `"png"` for PNG image,
+              * `"gif"` for GIF image,
+              * `"jp2"` for JP2 image,
+              * `"pdf"` for PDF image.
+}}
 }
 \value{
 a matrix of the image

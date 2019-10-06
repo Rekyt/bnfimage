@@ -13,26 +13,36 @@
 #'                   an integer that defines the rotation in degrees to apply
 #'                   to the final image (`0` for no rotation)
 #' @param quality    \[`character(1)`\]\cr{}
-#'                   `"native"` for native colors of the image or
-#'                   `"bitonal"` for levels of gray
+#'
+#'                   * `"native"` for native colors of the image or,
+#'                   * `"color"` for the image in color,
+#'                   * `"gray"` for levels of gray,
+#'                   * `"bitonal"` for only black and white pixels.
 #' @param format     \[`character(1)`\]\cr{}
-#'                   `"jpg"` for JPEG image
-#'                   `"png"` for PNG image
+#'
+#'                   * `"jpg"` for JPEG image,
+#'                   * `"tif"` for TIFF image,
+#'                   * `"png"` for PNG image,
+#'                   * `"gif"` for GIF image,
+#'                   * `"jp2"` for JP2 image,
+#'                   * `"pdf"` for PDF image.
 #'
 #' @return a matrix of the image
 #' @export
 bi_image = function(identifier = NULL, region = c(0L, 0L, 500L, 500L),
                     size = "full", rotation = 0,
-                    quality = c("native", "bitonal"),
-                    format = c("jpg", "png")) {
+                    quality = c("native", "color", "gray", "bitonal"),
+                    format = c("jpg", "tif", "png", "gif", "jp2", "pdf")) {
 
   if (is.null(identifier)) {
     stop("Define an identifier for your image")
   }
 
-  if (is.integer(region) & length(region)) {
+  if (is.numeric(region) & length(region) == 4) {
     region = paste(region, collapse = ",")
-  } else if (is.character(region) & region != "full") {
+  } else if ((is.numeric(region) & length(region) != 4) |
+             (is.character(region) &
+              (region[1] != "full" | length(region) != 1))) {
     stop("region has to be a length 4 integer vector or 'full'")
   }
 
