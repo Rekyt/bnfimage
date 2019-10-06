@@ -110,8 +110,8 @@
     </div>
 
     <pre class="usage"><span class='fu'>bi_image</span>(<span class='kw'>identifier</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>region</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0L</span>, <span class='fl'>0L</span>, <span class='fl'>500L</span>, <span class='fl'>500L</span>),
-  <span class='kw'>size</span> <span class='kw'>=</span> <span class='st'>"full"</span>, <span class='kw'>rotation</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>quality</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"native"</span>, <span class='st'>"bitonal"</span>),
-  <span class='kw'>format</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"jpg"</span>, <span class='st'>"png"</span>))</pre>
+  <span class='kw'>size</span> <span class='kw'>=</span> <span class='st'>"full"</span>, <span class='kw'>rotation</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>quality</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"native"</span>, <span class='st'>"color"</span>, <span class='st'>"gray"</span>,
+  <span class='st'>"bitonal"</span>), <span class='kw'>format</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"jpg"</span>, <span class='st'>"tif"</span>, <span class='st'>"png"</span>, <span class='st'>"gif"</span>, <span class='st'>"jp2"</span>, <span class='st'>"pdf"</span>))</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -142,15 +142,21 @@ to the final image (<code>0</code> for no rotation)</p></td>
     </tr>
     <tr>
       <th>quality</th>
-      <td><p>[<code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>]<br />
-<code>"native"</code> for native colors of the image or
-<code>"bitonal"</code> for levels of gray</p></td>
+      <td><p>[<code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>]<br /></p><pre>              * `"native"` for native colors of the image or,
+              * `"color"` for the image in color,
+              * `"gray"` for levels of gray,
+              * `"bitonal"` for only black and white pixels.
+</pre></td>
     </tr>
     <tr>
       <th>format</th>
-      <td><p>[<code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>]<br />
-<code>"jpg"</code> for JPEG image
-<code>"png"</code> for PNG image</p></td>
+      <td><p>[<code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>]<br /></p><pre>              * `"jpg"` for JPEG image,
+              * `"tif"` for TIFF image,
+              * `"png"` for PNG image,
+              * `"gif"` for GIF image,
+              * `"jp2"` for JP2 image,
+              * `"pdf"` for PDF image.
+</pre></td>
     </tr>
     </table>
 
