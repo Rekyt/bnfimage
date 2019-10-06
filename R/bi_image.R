@@ -53,6 +53,9 @@ bi_image = function(identifier = NULL, region = c(0L, 0L, 500L, 500L),
 
   bi_query = bi_GET(identifier, region, size, rotation,
                     paste0(quality, ".", format))
-  httr::http_error(bi_query)
+  if (httr::http_error(bi_query)) {
+    stop("The API could not be reached, please try again later")
+  }
+
   httr::content(bi_query)
 }

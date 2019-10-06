@@ -1,25 +1,14 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  eval = FALSE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
 
 # `bnfimage` – API client to BnF images
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
-`bnfimage` is an R client for the [BnF images API](http://api.bnf.fr/api-iiif-de-recuperation-des-images-de-gallica)
+`bnfimage` is an R client for the [BnF images
+API](http://api.bnf.fr/api-iiif-de-recuperation-des-images-de-gallica)
 
 ## Installation
 
@@ -33,7 +22,7 @@ remotes::install_github("Rekyt/bnfimage")
 
 You can extract images with the `bi_image()` function:
 
-```{r example}
+``` r
 library(bnfimage)
 eiffel_tower = bi_image(
   identifier = "ark:/12148/btv1b9055204k/f1",
@@ -48,9 +37,10 @@ str(eiffel_tower)
 image(eiffel_tower)
 ```
 
-You can get the metadata associated with this image using `bi_metadata()`:
+You can get the metadata associated with this image using
+`bi_metadata()`:
 
-```{r metadata_example}
+``` r
 eiffel_metadata = bi_metadata("ark:/12148/btv1b9055204k/f1")
 
 str(eiffel_metadata)
@@ -58,6 +48,6 @@ str(eiffel_metadata)
 
 ## Code of Conduct
 
-Please note that the `bnfimage` project is released with a
-[Contributor Code of Conduct](CODE_OF_CONDUCT.md).
-By contributing to this project, you agree to abide by its terms.
+Please note that the `bnfimage` project is released with a [Contributor
+Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project,
+you agree to abide by its terms.
