@@ -47,7 +47,7 @@ eiffel_tower = bi_image(
 
 str(eiffel_tower)
 
-image(eiffel_tower)
+eiffel_tower
 ```
 
 You can get the metadata associated with this image using `bi_metadata()`:

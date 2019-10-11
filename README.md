@@ -49,9 +49,9 @@ eiffel_tower = bi_image(
   format     = "png")
 
 str(eiffel_tower)
-#>  num [1:750, 1:1500] 0.885 0.903 0.919 0.924 0.933 ...
+#> Class 'magick-image' <externalptr>
 
-image(eiffel_tower)
+eiffel_tower
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
