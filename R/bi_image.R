@@ -67,5 +67,5 @@ bi_image = function(identifier = NULL, region = c(0L, 0L, 500L, 500L),
     stop("The API could not be reached, please try again later")
   }
 
-  httr::content(bi_query)
+  magick::image_read(bi_query$content)
 }
