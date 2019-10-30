@@ -13,6 +13,13 @@ r:
   - release
 os:
   - linux
+
+addons:
+  apt:
+    update: true
+    packages:
+      - libmagick++-dev
+
 matrix:
   include:
     - r: release
