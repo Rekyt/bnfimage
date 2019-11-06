@@ -13,7 +13,8 @@ LazyData: true
 Imports: 
     httr,
     vcr,
-    magick
+    magick,
+    tibble
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 Suggests: 

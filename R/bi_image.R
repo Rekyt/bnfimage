@@ -58,8 +58,8 @@ bi_image = function(identifier = NULL, region = c(0L, 0L, 500L, 500L),
     stop("rotation has to be a numeric vector of length 1")
   }
 
-  match.arg(quality)
-  match.arg(format)
+  quality = match.arg(quality)
+  format = match.arg(format)
 
   bi_query = bi_GET(identifier, region, size, rotation,
                     paste0(quality, ".", format))
