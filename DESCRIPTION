@@ -12,7 +12,7 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     httr,
-    vcr (>= 0.3.0.9132),
+    vcr (>= 0.3.0),
     magick,
     tibble
 Roxygen: list(markdown = TRUE)
