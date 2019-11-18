@@ -12,10 +12,12 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     httr,
-    vcr,
+    vcr (>= 0.3.0.9132),
     magick,
     tibble
+Remotes: ropensci/vcr
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 Suggests: 
-    testthat (>= 2.1.0)
+    testthat (>= 2.1.0),
+    vcr

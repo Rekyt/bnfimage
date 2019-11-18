@@ -14,18 +14,18 @@
 #'                   to the final image (`0` for no rotation)
 #' @param quality    \[`character(1)`\]\cr{}
 #'
-#'                   * `"native"` for native colors of the image or,
-#'                   * `"color"` for the image in color,
-#'                   * `"gray"` for levels of gray,
-#'                   * `"bitonal"` for only black and white pixels.
+#' * `"native"` for native colors of the image or,
+#' * `"color"` for the image in color,
+#' * `"gray"` for levels of gray,
+#' * `"bitonal"` for only black and white pixels.
 #' @param format     \[`character(1)`\]\cr{}
 #'
-#'                   * `"jpg"` for JPEG image,
-#'                   * `"tif"` for TIFF image,
-#'                   * `"png"` for PNG image,
-#'                   * `"gif"` for GIF image,
-#'                   * `"jp2"` for JP2 image,
-#'                   * `"pdf"` for PDF image.
+#' * `"jpg"` for JPEG image,
+#' * `"tif"` for TIFF image,
+#' * `"png"` for PNG image,
+#' * `"gif"` for GIF image,
+#' * `"jp2"` for JP2 image,
+#' * `"pdf"` for PDF image.
 #'
 #' @return a matrix of the image
 #' @export
@@ -63,8 +63,10 @@ bi_image = function(identifier = NULL, region = c(0L, 0L, 500L, 500L),
 
   bi_query = bi_GET(identifier, region, size, rotation,
                     paste0(quality, ".", format))
-  if (httr::http_error(bi_query)) {
+  if (bi_query$status_code == 503) {
     stop("The API could not be reached, please try again later")
+  } else if (bi_query$status_code == 500) {
+    stop("The query gave no answer. Please try another query")
   }
 
   magick::image_read(bi_query$content)

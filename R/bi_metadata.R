@@ -8,6 +8,17 @@ bi_metadata = function(identifier = NULL) {
   }
 
   bi_query = bi_GET(identifier, "manifest.json")
-  httr::http_error(bi_query)
-  httr::content(bi_query)
+
+  bi_content = httr::content(bi_query, encoding = "UTF-8")
+
+  bi_error = ifelse(!is.null(bi_content$ErrorFragment$contenu), TRUE, FALSE)
+
+  if (bi_query$status_code == 503) {
+    stop("The API could not be reached, please try again later")
+  } else if (bi_query$status_code == 500 |
+             bi_error) {
+    stop("The query gave no answer. Please try another query")
+  }
+
+  return(bi_content)
 }
