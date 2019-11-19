@@ -58,6 +58,10 @@ eiffel_metadata = bi_metadata("ark:/12148/btv1b9055204k/f1")
 str(eiffel_metadata)
 ```
 
+## Related projects
+
+[`gargallica`](GuillaumePressiat/gargallica) is a collection of script and functions to retrieve data from the regular Gallica API.
+
 ## Code of Conduct
 
 Please note that the `bnfimage` project is released with a

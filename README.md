@@ -159,6 +159,11 @@ str(eiffel_metadata)
 #>  $ @context   : chr "http://iiif.io/api/presentation/2/context.json"
 ```
 
+## Related projects
+
+[`gargallica`](GuillaumePressiat/gargallica) is a collection of script
+and functions to retrieve data from the regular Gallica API.
+
 ## Code of Conduct
 
 Please note that the `bnfimage` project is released with a [Contributor
