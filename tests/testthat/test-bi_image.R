@@ -2,6 +2,8 @@ test_that("bi_image() fails gracefully on wrong arguments", {
   # Test for identifier
   expect_error(bi_image(NULL),
                "Define an identifier for your image", fixed = TRUE)
+  expect_error(bi_image(NA),
+               "Define an identifier for your image", fixed = TRUE)
 
   # Test for region
   expect_error(bi_image("a", region = "a"),

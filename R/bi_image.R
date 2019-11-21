@@ -34,7 +34,7 @@ bi_image = function(identifier = NULL, region = c(0L, 0L, 500L, 500L),
                     quality = c("native", "color", "gray", "bitonal"),
                     format = c("jpg", "tif", "png", "gif", "jp2", "pdf")) {
 
-  if (is.null(identifier)) {
+  if (is_null_or_na(identifier)) {
     stop("Define an identifier for your image")
   }
 
