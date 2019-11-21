@@ -62,7 +62,7 @@ You can get the metadata associated with this image using
 ``` r
 eiffel_metadata = bi_metadata("ark:/12148/btv1b9055204k/f1")
 
-str(eiffel_metadata)
+str(eiffel_metadata, max.l = 2)
 #> List of 13
 #>  $ @id        : chr "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/manifest.json"
 #>  $ label      : chr "BnF, département Estampes et photographie, EI-13 (2726)"
@@ -75,88 +75,48 @@ str(eiffel_metadata)
 #>  $ description: chr "Monuments de Paris : La Tour Eiffel : [photographie de presse] / Agence Meurisse"
 #>  $ metadata   :List of 14
 #>   ..$ :List of 2
-#>   .. ..$ label: chr "Repository"
-#>   .. ..$ value: chr "Bibliothèque nationale de France"
 #>   ..$ :List of 2
-#>   .. ..$ label: chr "Digitised by"
-#>   .. ..$ value: chr "Bibliothèque nationale de France"
 #>   ..$ :List of 2
-#>   .. ..$ label: chr "Source Images"
-#>   .. ..$ value: chr "https://gallica.bnf.fr/ark:/12148/btv1b9055204k"
 #>   ..$ :List of 2
-#>   .. ..$ label: chr "Metadata Source"
-#>   .. ..$ value: chr "http://oai.bnf.fr/oai2/OAIHandler?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:bnf.fr:gallica/ark:/12148/btv1b9055204k"
 #>   ..$ :List of 2
-#>   .. ..$ label: chr "Shelfmark"
-#>   .. ..$ value: chr "Bibliothèque nationale de France, département Estampes et photographie, EI-13 (2726)"
 #>   ..$ :List of 2
-#>   .. ..$ label: chr "Title"
-#>   .. ..$ value: chr "Monuments de Paris : La Tour Eiffel : [photographie de presse] / Agence Meurisse"
 #>   ..$ :List of 2
-#>   .. ..$ label: chr "Date"
-#>   .. ..$ value: chr "1922"
 #>   ..$ :List of 2
-#>   .. ..$ label: chr "Language"
-#>   .. ..$ value:List of 1
-#>   .. .. ..$ :List of 1
-#>   .. .. .. ..$ @value: chr "français"
 #>   ..$ :List of 2
-#>   .. ..$ label: chr "Format"
-#>   .. ..$ value:List of 3
-#>   .. .. ..$ :List of 1
-#>   .. .. .. ..$ @value: chr "1 photogr. nég. sur verre ; 13 x 18 cm (sup.) ou moins"
-#>   .. .. ..$ :List of 1
-#>   .. .. .. ..$ @value: chr "image/jpeg"
-#>   .. .. ..$ :List of 1
-#>   .. .. .. ..$ @value: chr "Nombre total de vues :  1"
 #>   ..$ :List of 2
-#>   .. ..$ label: chr "Creator"
-#>   .. ..$ value: chr "Agence de presse Meurisse. Agence photographique"
 #>   ..$ :List of 2
-#>   .. ..$ label: chr "Relation"
-#>   .. ..$ value: chr "Notice de recueil : http://catalogue.bnf.fr/ark:/12148/cb404994307"
 #>   ..$ :List of 2
-#>   .. ..$ label: chr "Relation"
-#>   .. ..$ value: chr "Appartient à : [Recueil. Actualités 1922-06-25**1923-05-14. Agence Meurisse MEU 98603-6091 A]"
 #>   ..$ :List of 2
-#>   .. ..$ label: chr "Relation"
-#>   .. ..$ value: chr "Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb415818268"
 #>   ..$ :List of 2
-#>   .. ..$ label: chr "Type"
-#>   .. ..$ value: chr "image"
 #>  $ sequences  :List of 1
 #>   ..$ :List of 4
-#>   .. ..$ canvases:List of 1
-#>   .. .. ..$ :List of 7
-#>   .. .. .. ..$ @id      : chr "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/canvas/f1"
-#>   .. .. .. ..$ label    : chr "NP"
-#>   .. .. .. ..$ height   : int 7000
-#>   .. .. .. ..$ width    : int 5127
-#>   .. .. .. ..$ images   :List of 1
-#>   .. .. .. .. ..$ :List of 4
-#>   .. .. .. .. .. ..$ motivation: chr "sc:painting"
-#>   .. .. .. .. .. ..$ on        : chr "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/canvas/f1"
-#>   .. .. .. .. .. ..$ resource  :List of 6
-#>   .. .. .. .. .. .. ..$ format : chr "image/jpeg"
-#>   .. .. .. .. .. .. ..$ service:List of 3
-#>   .. .. .. .. .. .. .. ..$ profile : chr "http://library.stanford.edu/iiif/image-api/1.1/compliance.html#level2"
-#>   .. .. .. .. .. .. .. ..$ @context: chr "http://iiif.io/api/image/1/context.json"
-#>   .. .. .. .. .. .. .. ..$ @id     : chr "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/f1"
-#>   .. .. .. .. .. .. ..$ height : int 7000
-#>   .. .. .. .. .. .. ..$ width  : int 5127
-#>   .. .. .. .. .. .. ..$ @id    : chr "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/f1/full/full/0/native.jpg"
-#>   .. .. .. .. .. .. ..$ @type  : chr "dctypes:Image"
-#>   .. .. .. .. .. ..$ @type     : chr "oa:Annotation"
-#>   .. .. .. ..$ thumbnail:List of 1
-#>   .. .. .. .. ..$ @id: chr "https://gallica.bnf.fr/ark:/12148/btv1b9055204k/f1.thumbnail"
-#>   .. .. .. ..$ @type    : chr "sc:Canvas"
-#>   .. ..$ label   : chr "Current Page Order"
-#>   .. ..$ @type   : chr "sc:Sequence"
-#>   .. ..$ @id     : chr "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/sequence/default"
 #>  $ thumbnail  :List of 1
 #>   ..$ @id: chr "https://gallica.bnf.fr/ark:/12148/btv1b9055204k.thumbnail"
 #>  $ @type      : chr "sc:Manifest"
 #>  $ @context   : chr "http://iiif.io/api/presentation/2/context.json"
+```
+
+You can query both data and associated metadata using the
+`bi_all_data()` function and get a nicely formatted tibble:
+
+``` r
+bi_all_data("ark:/12148/btv1b9055204k/f1", size = c(15, 7))
+#> # A tibble: 1 x 3
+#>   identifier                  image      metadata         
+#>   <chr>                       <list>     <list>           
+#> 1 ark:/12148/btv1b9055204k/f1 <magck-mg> <named list [13]>
+```
+
+You can also provide several identifiers to `bi_all_data()`:
+
+``` r
+bi_all_data(c("ark:/12148/btv1b9055204k/f1",
+              "ark:/12148/btv1b90055455/f1"))
+#> # A tibble: 2 x 3
+#>   identifier                  image      metadata         
+#>   <chr>                       <list>     <list>           
+#> 1 ark:/12148/btv1b9055204k/f1 <magck-mg> <named list [13]>
+#> 2 ark:/12148/btv1b90055455/f1 <magck-mg> <named list [13]>
 ```
 
 ## Related projects

@@ -55,7 +55,20 @@ You can get the metadata associated with this image using `bi_metadata()`:
 ```{r metadata_example}
 eiffel_metadata = bi_metadata("ark:/12148/btv1b9055204k/f1")
 
-str(eiffel_metadata)
+str(eiffel_metadata, max.l = 2)
+```
+
+You can query both data and associated metadata using the `bi_all_data()` function and get a nicely formatted tibble:
+
+```{r all_data_1}
+bi_all_data("ark:/12148/btv1b9055204k/f1", size = c(15, 7))
+```
+
+You can also provide several identifiers to `bi_all_data()`:
+
+```{r all_data_2}
+bi_all_data(c("ark:/12148/btv1b9055204k/f1",
+              "ark:/12148/btv1b90055455/f1"))
 ```
 
 ## Related projects
