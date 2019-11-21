@@ -20,9 +20,9 @@ bi_all_data = function(identifier = NULL, region = c(0L, 0L, 500L, 500L),
     bi_image(single_id, region, size, rotation, quality, format)
   })
 
-  image = setNames(image, NULL)
+  image = stats::setNames(image, NULL)
 
-  image_metadata = setNames(lapply(identifier, bi_metadata), NULL)
+  image_metadata = stats::setNames(lapply(identifier, bi_metadata), NULL)
 
   tibble::tibble(identifier = identifier,
                  image      = image,
