@@ -93,7 +93,7 @@
 <p>You can get the metadata associated with this image using <code><a href="reference/bi_metadata.html">bi_metadata()</a></code>:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">eiffel_metadata =<span class="st"> </span><span class="kw"><a href="reference/bi_metadata.html">bi_metadata</a></span>(<span class="st">"ark:/12148/btv1b9055204k/f1"</span>)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="kw"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(eiffel_metadata)</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="kw"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(eiffel_metadata, <span class="dt">max.l =</span> <span class="dv">2</span>)</a>
 <a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt; List of 13</span></a>
 <a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt;  $ @id        : chr "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/manifest.json"</span></a>
 <a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt;  $ label      : chr "BnF, département Estampes et photographie, EI-13 (2726)"</span></a>
@@ -106,88 +106,44 @@
 <a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt;  $ description: chr "Monuments de Paris : La Tour Eiffel : [photographie de presse] / Agence Meurisse"</span></a>
 <a class="sourceLine" id="cb3-14" data-line-number="14"><span class="co">#&gt;  $ metadata   :List of 14</span></a>
 <a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt;   ..$ :List of 2</span></a>
-<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt;   .. ..$ label: chr "Repository"</span></a>
-<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">#&gt;   .. ..$ value: chr "Bibliothèque nationale de France"</span></a>
+<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt;   ..$ :List of 2</span></a>
+<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">#&gt;   ..$ :List of 2</span></a>
 <a class="sourceLine" id="cb3-18" data-line-number="18"><span class="co">#&gt;   ..$ :List of 2</span></a>
-<a class="sourceLine" id="cb3-19" data-line-number="19"><span class="co">#&gt;   .. ..$ label: chr "Digitised by"</span></a>
-<a class="sourceLine" id="cb3-20" data-line-number="20"><span class="co">#&gt;   .. ..$ value: chr "Bibliothèque nationale de France"</span></a>
+<a class="sourceLine" id="cb3-19" data-line-number="19"><span class="co">#&gt;   ..$ :List of 2</span></a>
+<a class="sourceLine" id="cb3-20" data-line-number="20"><span class="co">#&gt;   ..$ :List of 2</span></a>
 <a class="sourceLine" id="cb3-21" data-line-number="21"><span class="co">#&gt;   ..$ :List of 2</span></a>
-<a class="sourceLine" id="cb3-22" data-line-number="22"><span class="co">#&gt;   .. ..$ label: chr "Source Images"</span></a>
-<a class="sourceLine" id="cb3-23" data-line-number="23"><span class="co">#&gt;   .. ..$ value: chr "https://gallica.bnf.fr/ark:/12148/btv1b9055204k"</span></a>
+<a class="sourceLine" id="cb3-22" data-line-number="22"><span class="co">#&gt;   ..$ :List of 2</span></a>
+<a class="sourceLine" id="cb3-23" data-line-number="23"><span class="co">#&gt;   ..$ :List of 2</span></a>
 <a class="sourceLine" id="cb3-24" data-line-number="24"><span class="co">#&gt;   ..$ :List of 2</span></a>
-<a class="sourceLine" id="cb3-25" data-line-number="25"><span class="co">#&gt;   .. ..$ label: chr "Metadata Source"</span></a>
-<a class="sourceLine" id="cb3-26" data-line-number="26"><span class="co">#&gt;   .. ..$ value: chr "http://oai.bnf.fr/oai2/OAIHandler?verb=GetRecord&amp;metadataPrefix=oai_dc&amp;identifier=oai:bnf.fr:gallica/ark:/12148/btv1b9055204k"</span></a>
+<a class="sourceLine" id="cb3-25" data-line-number="25"><span class="co">#&gt;   ..$ :List of 2</span></a>
+<a class="sourceLine" id="cb3-26" data-line-number="26"><span class="co">#&gt;   ..$ :List of 2</span></a>
 <a class="sourceLine" id="cb3-27" data-line-number="27"><span class="co">#&gt;   ..$ :List of 2</span></a>
-<a class="sourceLine" id="cb3-28" data-line-number="28"><span class="co">#&gt;   .. ..$ label: chr "Shelfmark"</span></a>
-<a class="sourceLine" id="cb3-29" data-line-number="29"><span class="co">#&gt;   .. ..$ value: chr "Bibliothèque nationale de France, département Estampes et photographie, EI-13 (2726)"</span></a>
-<a class="sourceLine" id="cb3-30" data-line-number="30"><span class="co">#&gt;   ..$ :List of 2</span></a>
-<a class="sourceLine" id="cb3-31" data-line-number="31"><span class="co">#&gt;   .. ..$ label: chr "Title"</span></a>
-<a class="sourceLine" id="cb3-32" data-line-number="32"><span class="co">#&gt;   .. ..$ value: chr "Monuments de Paris : La Tour Eiffel : [photographie de presse] / Agence Meurisse"</span></a>
-<a class="sourceLine" id="cb3-33" data-line-number="33"><span class="co">#&gt;   ..$ :List of 2</span></a>
-<a class="sourceLine" id="cb3-34" data-line-number="34"><span class="co">#&gt;   .. ..$ label: chr "Date"</span></a>
-<a class="sourceLine" id="cb3-35" data-line-number="35"><span class="co">#&gt;   .. ..$ value: chr "1922"</span></a>
-<a class="sourceLine" id="cb3-36" data-line-number="36"><span class="co">#&gt;   ..$ :List of 2</span></a>
-<a class="sourceLine" id="cb3-37" data-line-number="37"><span class="co">#&gt;   .. ..$ label: chr "Language"</span></a>
-<a class="sourceLine" id="cb3-38" data-line-number="38"><span class="co">#&gt;   .. ..$ value:List of 1</span></a>
-<a class="sourceLine" id="cb3-39" data-line-number="39"><span class="co">#&gt;   .. .. ..$ :List of 1</span></a>
-<a class="sourceLine" id="cb3-40" data-line-number="40"><span class="co">#&gt;   .. .. .. ..$ @value: chr "français"</span></a>
-<a class="sourceLine" id="cb3-41" data-line-number="41"><span class="co">#&gt;   ..$ :List of 2</span></a>
-<a class="sourceLine" id="cb3-42" data-line-number="42"><span class="co">#&gt;   .. ..$ label: chr "Format"</span></a>
-<a class="sourceLine" id="cb3-43" data-line-number="43"><span class="co">#&gt;   .. ..$ value:List of 3</span></a>
-<a class="sourceLine" id="cb3-44" data-line-number="44"><span class="co">#&gt;   .. .. ..$ :List of 1</span></a>
-<a class="sourceLine" id="cb3-45" data-line-number="45"><span class="co">#&gt;   .. .. .. ..$ @value: chr "1 photogr. nég. sur verre ; 13 x 18 cm (sup.) ou moins"</span></a>
-<a class="sourceLine" id="cb3-46" data-line-number="46"><span class="co">#&gt;   .. .. ..$ :List of 1</span></a>
-<a class="sourceLine" id="cb3-47" data-line-number="47"><span class="co">#&gt;   .. .. .. ..$ @value: chr "image/jpeg"</span></a>
-<a class="sourceLine" id="cb3-48" data-line-number="48"><span class="co">#&gt;   .. .. ..$ :List of 1</span></a>
-<a class="sourceLine" id="cb3-49" data-line-number="49"><span class="co">#&gt;   .. .. .. ..$ @value: chr "Nombre total de vues :  1"</span></a>
-<a class="sourceLine" id="cb3-50" data-line-number="50"><span class="co">#&gt;   ..$ :List of 2</span></a>
-<a class="sourceLine" id="cb3-51" data-line-number="51"><span class="co">#&gt;   .. ..$ label: chr "Creator"</span></a>
-<a class="sourceLine" id="cb3-52" data-line-number="52"><span class="co">#&gt;   .. ..$ value: chr "Agence de presse Meurisse. Agence photographique"</span></a>
-<a class="sourceLine" id="cb3-53" data-line-number="53"><span class="co">#&gt;   ..$ :List of 2</span></a>
-<a class="sourceLine" id="cb3-54" data-line-number="54"><span class="co">#&gt;   .. ..$ label: chr "Relation"</span></a>
-<a class="sourceLine" id="cb3-55" data-line-number="55"><span class="co">#&gt;   .. ..$ value: chr "Notice de recueil : http://catalogue.bnf.fr/ark:/12148/cb404994307"</span></a>
-<a class="sourceLine" id="cb3-56" data-line-number="56"><span class="co">#&gt;   ..$ :List of 2</span></a>
-<a class="sourceLine" id="cb3-57" data-line-number="57"><span class="co">#&gt;   .. ..$ label: chr "Relation"</span></a>
-<a class="sourceLine" id="cb3-58" data-line-number="58"><span class="co">#&gt;   .. ..$ value: chr "Appartient à : [Recueil. Actualités 1922-06-25**1923-05-14. Agence Meurisse MEU 98603-6091 A]"</span></a>
-<a class="sourceLine" id="cb3-59" data-line-number="59"><span class="co">#&gt;   ..$ :List of 2</span></a>
-<a class="sourceLine" id="cb3-60" data-line-number="60"><span class="co">#&gt;   .. ..$ label: chr "Relation"</span></a>
-<a class="sourceLine" id="cb3-61" data-line-number="61"><span class="co">#&gt;   .. ..$ value: chr "Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb415818268"</span></a>
-<a class="sourceLine" id="cb3-62" data-line-number="62"><span class="co">#&gt;   ..$ :List of 2</span></a>
-<a class="sourceLine" id="cb3-63" data-line-number="63"><span class="co">#&gt;   .. ..$ label: chr "Type"</span></a>
-<a class="sourceLine" id="cb3-64" data-line-number="64"><span class="co">#&gt;   .. ..$ value: chr "image"</span></a>
-<a class="sourceLine" id="cb3-65" data-line-number="65"><span class="co">#&gt;  $ sequences  :List of 1</span></a>
-<a class="sourceLine" id="cb3-66" data-line-number="66"><span class="co">#&gt;   ..$ :List of 4</span></a>
-<a class="sourceLine" id="cb3-67" data-line-number="67"><span class="co">#&gt;   .. ..$ canvases:List of 1</span></a>
-<a class="sourceLine" id="cb3-68" data-line-number="68"><span class="co">#&gt;   .. .. ..$ :List of 7</span></a>
-<a class="sourceLine" id="cb3-69" data-line-number="69"><span class="co">#&gt;   .. .. .. ..$ @id      : chr "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/canvas/f1"</span></a>
-<a class="sourceLine" id="cb3-70" data-line-number="70"><span class="co">#&gt;   .. .. .. ..$ label    : chr "NP"</span></a>
-<a class="sourceLine" id="cb3-71" data-line-number="71"><span class="co">#&gt;   .. .. .. ..$ height   : int 7000</span></a>
-<a class="sourceLine" id="cb3-72" data-line-number="72"><span class="co">#&gt;   .. .. .. ..$ width    : int 5127</span></a>
-<a class="sourceLine" id="cb3-73" data-line-number="73"><span class="co">#&gt;   .. .. .. ..$ images   :List of 1</span></a>
-<a class="sourceLine" id="cb3-74" data-line-number="74"><span class="co">#&gt;   .. .. .. .. ..$ :List of 4</span></a>
-<a class="sourceLine" id="cb3-75" data-line-number="75"><span class="co">#&gt;   .. .. .. .. .. ..$ motivation: chr "sc:painting"</span></a>
-<a class="sourceLine" id="cb3-76" data-line-number="76"><span class="co">#&gt;   .. .. .. .. .. ..$ on        : chr "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/canvas/f1"</span></a>
-<a class="sourceLine" id="cb3-77" data-line-number="77"><span class="co">#&gt;   .. .. .. .. .. ..$ resource  :List of 6</span></a>
-<a class="sourceLine" id="cb3-78" data-line-number="78"><span class="co">#&gt;   .. .. .. .. .. .. ..$ format : chr "image/jpeg"</span></a>
-<a class="sourceLine" id="cb3-79" data-line-number="79"><span class="co">#&gt;   .. .. .. .. .. .. ..$ service:List of 3</span></a>
-<a class="sourceLine" id="cb3-80" data-line-number="80"><span class="co">#&gt;   .. .. .. .. .. .. .. ..$ profile : chr "http://library.stanford.edu/iiif/image-api/1.1/compliance.html#level2"</span></a>
-<a class="sourceLine" id="cb3-81" data-line-number="81"><span class="co">#&gt;   .. .. .. .. .. .. .. ..$ @context: chr "http://iiif.io/api/image/1/context.json"</span></a>
-<a class="sourceLine" id="cb3-82" data-line-number="82"><span class="co">#&gt;   .. .. .. .. .. .. .. ..$ @id     : chr "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/f1"</span></a>
-<a class="sourceLine" id="cb3-83" data-line-number="83"><span class="co">#&gt;   .. .. .. .. .. .. ..$ height : int 7000</span></a>
-<a class="sourceLine" id="cb3-84" data-line-number="84"><span class="co">#&gt;   .. .. .. .. .. .. ..$ width  : int 5127</span></a>
-<a class="sourceLine" id="cb3-85" data-line-number="85"><span class="co">#&gt;   .. .. .. .. .. .. ..$ @id    : chr "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/f1/full/full/0/native.jpg"</span></a>
-<a class="sourceLine" id="cb3-86" data-line-number="86"><span class="co">#&gt;   .. .. .. .. .. .. ..$ @type  : chr "dctypes:Image"</span></a>
-<a class="sourceLine" id="cb3-87" data-line-number="87"><span class="co">#&gt;   .. .. .. .. .. ..$ @type     : chr "oa:Annotation"</span></a>
-<a class="sourceLine" id="cb3-88" data-line-number="88"><span class="co">#&gt;   .. .. .. ..$ thumbnail:List of 1</span></a>
-<a class="sourceLine" id="cb3-89" data-line-number="89"><span class="co">#&gt;   .. .. .. .. ..$ @id: chr "https://gallica.bnf.fr/ark:/12148/btv1b9055204k/f1.thumbnail"</span></a>
-<a class="sourceLine" id="cb3-90" data-line-number="90"><span class="co">#&gt;   .. .. .. ..$ @type    : chr "sc:Canvas"</span></a>
-<a class="sourceLine" id="cb3-91" data-line-number="91"><span class="co">#&gt;   .. ..$ label   : chr "Current Page Order"</span></a>
-<a class="sourceLine" id="cb3-92" data-line-number="92"><span class="co">#&gt;   .. ..$ @type   : chr "sc:Sequence"</span></a>
-<a class="sourceLine" id="cb3-93" data-line-number="93"><span class="co">#&gt;   .. ..$ @id     : chr "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/sequence/default"</span></a>
-<a class="sourceLine" id="cb3-94" data-line-number="94"><span class="co">#&gt;  $ thumbnail  :List of 1</span></a>
-<a class="sourceLine" id="cb3-95" data-line-number="95"><span class="co">#&gt;   ..$ @id: chr "https://gallica.bnf.fr/ark:/12148/btv1b9055204k.thumbnail"</span></a>
-<a class="sourceLine" id="cb3-96" data-line-number="96"><span class="co">#&gt;  $ @type      : chr "sc:Manifest"</span></a>
-<a class="sourceLine" id="cb3-97" data-line-number="97"><span class="co">#&gt;  $ @context   : chr "http://iiif.io/api/presentation/2/context.json"</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-28" data-line-number="28"><span class="co">#&gt;   ..$ :List of 2</span></a>
+<a class="sourceLine" id="cb3-29" data-line-number="29"><span class="co">#&gt;  $ sequences  :List of 1</span></a>
+<a class="sourceLine" id="cb3-30" data-line-number="30"><span class="co">#&gt;   ..$ :List of 4</span></a>
+<a class="sourceLine" id="cb3-31" data-line-number="31"><span class="co">#&gt;  $ thumbnail  :List of 1</span></a>
+<a class="sourceLine" id="cb3-32" data-line-number="32"><span class="co">#&gt;   ..$ @id: chr "https://gallica.bnf.fr/ark:/12148/btv1b9055204k.thumbnail"</span></a>
+<a class="sourceLine" id="cb3-33" data-line-number="33"><span class="co">#&gt;  $ @type      : chr "sc:Manifest"</span></a>
+<a class="sourceLine" id="cb3-34" data-line-number="34"><span class="co">#&gt;  $ @context   : chr "http://iiif.io/api/presentation/2/context.json"</span></a></code></pre></div>
+<p>You can query both data and associated metadata using the <code><a href="reference/bi_all_data.html">bi_all_data()</a></code> function and get a nicely formatted tibble:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/bi_all_data.html">bi_all_data</a></span>(<span class="st">"ark:/12148/btv1b9055204k/f1"</span>, <span class="dt">size =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">15</span>, <span class="dv">7</span>))</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; # A tibble: 1 x 3</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt;   identifier                  image      metadata         </span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt;   &lt;chr&gt;                       &lt;list&gt;     &lt;list&gt;           </span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; 1 ark:/12148/btv1b9055204k/f1 &lt;magck-mg&gt; &lt;named list [13]&gt;</span></a></code></pre></div>
+<p>You can also provide several identifiers to <code><a href="reference/bi_all_data.html">bi_all_data()</a></code>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="reference/bi_all_data.html">bi_all_data</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"ark:/12148/btv1b9055204k/f1"</span>,</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">              <span class="st">"ark:/12148/btv1b90055455/f1"</span>))</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">#&gt; # A tibble: 2 x 3</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt;   identifier                  image      metadata         </span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt;   &lt;chr&gt;                       &lt;list&gt;     &lt;list&gt;           </span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt; 1 ark:/12148/btv1b9055204k/f1 &lt;magck-mg&gt; &lt;named list [13]&gt;</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; 2 ark:/12148/btv1b90055455/f1 &lt;magck-mg&gt; &lt;named list [13]&gt;</span></a></code></pre></div>
+</div>
+<div id="related-projects" class="section level2">
+<h2 class="hasAnchor">
+<a href="#related-projects" class="anchor"></a>Related projects</h2>
+<p><a href="GuillaumePressiat/gargallica"><code>gargallica</code></a> is a collection of script and functions to retrieve data from the regular Gallica API.</p>
 </div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
