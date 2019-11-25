@@ -26,5 +26,5 @@ vcr::use_cassette("bi_metadata", {
     expect_equal(eif[["logo"]],
                  "https://gallica.bnf.fr/mbImage/logos/logo-bnf.png")
   })
-})
+}, preserve_exact_body_bytes = TRUE)
 

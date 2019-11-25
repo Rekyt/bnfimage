@@ -204,4 +204,4 @@ use_cassette("bi_image", {
                    density = "72x72"))
 
   })
-})
+}, preserve_exact_body_bytes = TRUE)
