@@ -12,6 +12,12 @@ bi_ua = function() {
          utils::packageVersion("bnfimage"))
 }
 
+bi_check_identifier = function(id) {
+  if (!grepl("^ark:/12148/[\\w/]+$", toString(id), perl = TRUE)) {
+    stop("identifier is not valid", call. = FALSE)
+  }
+}
+
 is_null_or_na = function(x) {
   if (is.null(x)) {
     TRUE

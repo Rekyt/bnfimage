@@ -3,11 +3,13 @@ test_that("bi_metadata() fails when forgetting id", {
   expect_error(bi_metadata(NULL),
                "Define an identifier for your image",
                fixed = TRUE)
+  expect_error(bi_metadata("abc"),
+               "identifier is not valid", fixed = TRUE)
 })
 
 vcr::use_cassette("bi_metadata", {
   test_that("bi_metadata() fails gracefully", {
-    expect_error(bi_metadata("12345"),
+    expect_error(bi_metadata("ark:/12148/12345"),
                  "The query gave no answer. Please try another query",
                  fixed = TRUE)
   })

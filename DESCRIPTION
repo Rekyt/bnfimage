@@ -16,7 +16,7 @@ Imports:
     tibble
 Remotes: ropensci/vcr
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.0.0
+RoxygenNote: 7.0.1
 Suggests: 
     testthat (>= 2.1.0),
     vcr (>= 0.3.0.9132)

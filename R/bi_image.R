@@ -38,6 +38,8 @@ bi_image = function(identifier = NULL, region = c(0L, 0L, 500L, 500L),
     stop("Define an identifier for your image")
   }
 
+  bi_check_identifier(identifier)
+
   if (is.numeric(region) & length(region) == 4) {
     region = paste(region, collapse = ",")
   } else if ((is.numeric(region) & length(region) != 4) |

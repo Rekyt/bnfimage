@@ -20,3 +20,26 @@ test_that("is_null_or_na() works", {
   expect_false(is_null_or_na(0L))
   expect_false(is_null_or_na(factor("a")))
 })
+
+test_that("bi_check_identifier() works", {
+  expect_error(bi_check_identifier(NULL), "identifier is not valid",
+               fixed = TRUE)
+  expect_error(bi_check_identifier(NA), "identifier is not valid",
+               fixed = TRUE)
+  expect_error(bi_check_identifier(123), "identifier is not valid",
+               fixed = TRUE)
+  expect_error(bi_check_identifier("abc"), "identifier is not valid",
+               fixed = TRUE)
+  expect_error(bi_check_identifier("ark"), "identifier is not valid",
+               fixed = TRUE)
+  expect_error(bi_check_identifier("ark:/"), "identifier is not valid",
+               fixed = TRUE)
+  expect_error(bi_check_identifier("ark:/12148"), "identifier is not valid",
+               fixed = TRUE)
+  expect_error(bi_check_identifier("ark:/12148/"), "identifier is not valid",
+               fixed = TRUE)
+  expect_silent(bi_check_identifier("ark:/12148/abc"))
+  expect_silent(bi_check_identifier("ark:/12148/123"))
+  expect_silent(bi_check_identifier("ark:/12148/abc123"))
+  expect_silent(bi_check_identifier("ark:/12148/btv1b9055204k/f1"))
+})
