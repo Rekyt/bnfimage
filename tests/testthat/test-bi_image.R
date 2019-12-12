@@ -50,7 +50,7 @@ test_that("bi_image() fails gracefully on wrong arguments", {
                "'arg' must be NULL or a character vector", fixed = TRUE)
 })
 
-use_cassette("bi_image", {
+use_cassette("bi_image_error", {
   test_that("bi_image() fails gracefully when sending a wrong query", {
     expect_error(
       bi_image(
@@ -62,7 +62,9 @@ use_cassette("bi_image", {
         format     = "png"),
       "The query gave no answer. Please try another query", fixed = TRUE)
   })
+})
 
+use_cassette("bi_image_works", {
   test_that("bi_image() works with correct query", {
 
     # Regular query
@@ -86,9 +88,14 @@ use_cassette("bi_image", {
                    colorspace = "Gray",
                    matte = FALSE,
                    filesize = 22533L,
-                   density = "157x157"
+                   density = "+157x+157"
                  ))
+  })
+})
 
+use_cassette("bi_image_smaller", {
+
+  test_that("bi_image() works with options", {
     # Smaller size
     eiffel_tower = bi_image(
       identifier = "ark:/12148/btv1b9055204k/f1",
@@ -109,7 +116,7 @@ use_cassette("bi_image", {
                    colorspace = "Gray",
                    matte = FALSE,
                    filesize = 306L,
-                   density = "157x157"
+                   density = "+157x+157"
                  ))
 
 
@@ -134,7 +141,7 @@ use_cassette("bi_image", {
                    colorspace = "Gray",
                    matte = FALSE,
                    filesize = 224L,
-                   density = "400x400"
+                   density = "+400x+400"
                  ))
     ## TIFF
     eiffel_tower = bi_image(
@@ -156,7 +163,7 @@ use_cassette("bi_image", {
                    colorspace = "Gray",
                    matte = FALSE,
                    filesize = 525L,
-                   density = "400x400"
+                   density = "+400x+400"
                  ))
 
     # Color
@@ -180,7 +187,7 @@ use_cassette("bi_image", {
                    colorspace = "sRGB",
                    matte = FALSE,
                    filesize = 526L,
-                   density = "72x72"))
+                   density = "+72x+72"))
     ## Bitonal
     eiffel_tower = bi_image(
       identifier = "ark:/12148/btv1b9055204k/f1",
@@ -201,7 +208,7 @@ use_cassette("bi_image", {
                    colorspace = "sRGB",
                    matte = FALSE,
                    filesize = 58L,
-                   density = "72x72"))
+                   density = "+72x+72"))
 
   })
 }, preserve_exact_body_bytes = TRUE)

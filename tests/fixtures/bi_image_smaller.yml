@@ -1,0 +1,148 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/f1/full/15,7/0/native.png
+    body:
+      encoding: ''
+      string: no
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/bnfimage R package bnfimage/v.0.0.1
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 12 Dec 2019 14:59:44 GMT
+      server: Apache
+      x-oneagent-js-injection: 'true'
+      access-control-allow-origin: '*'
+      link: <http://iiif.io/api/image/compliance.html#level2>;rel="profile"
+      content-type: image/png
+      content-length: '306'
+    body:
+      encoding: ASCII-8BIT
+      file: no
+      string: iVBORw0KGgoAAAANSUhEUgAAAA8AAAAHEAAAAACifpS4AAAACXBIWXMAAD2EAAA9hAHVrK90AAAA5ElEQVQI1wHZACb/AE5Zef15u3URfA1sRogaljeQ4pQqoKCeYp7AnvlWRwBtBrhxtb+wFa2XhoS02br4v7vFccmt0jvWvdnJdOQAbUC5E6ltoy+VunAXs+DFIMz4zgHQFNRB1pbc43nhAGiFsgibJI05T49YvmxsplqrQqoBscy32b0WzFV5gQAzmzzCO8Y0MkGiUG1CrT64Qj4yxTlaNsouCzOMNNUAJ0UkpyM9H8gZ+SGLVkUlujpFUBdRWFP9TdNJwzlCAC5sJD4m+ySiIL4X5T/mLsBEslM4V3trDnnogm5q8Hv7ZTfAMNEGAAAAAElFTkSuQmCC
+  recorded_at: 2019-12-12 15:01:34 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.0
+- request:
+    method: get
+    uri: https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/f1/full/15,7/0/native.jpg
+    body:
+      encoding: ''
+      string: no
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/bnfimage R package bnfimage/v.0.0.1
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 12 Dec 2019 14:59:50 GMT
+      server: Apache
+      x-oneagent-js-injection: 'true'
+      access-control-allow-origin: '*'
+      link: <http://iiif.io/api/image/compliance.html#level2>;rel="profile"
+      content-type: image/jpeg
+      content-length: '224'
+    body:
+      encoding: ASCII-8BIT
+      file: no
+      string: /9j/4AAQSkZJRgABAQEBkAGQAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/wAALCAAHAA8BAREA/8QAFAABAAAAAAAAAAAAAAAAAAAABv/EACQQAAEDAgQHAAAAAAAAAAAAAAECAwQFEQAGMVEHEhMhIkFh/9oACAEBAAA/ACUXiSy2/BbaosdCY6LKBseqUptqALe9+9sKZ+dnqtQpEdrLMMIXy+aZABTZQOhR83x//9k=
+  recorded_at: 2019-12-12 15:01:34 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.0
+- request:
+    method: get
+    uri: https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/f1/full/15,7/0/native.tif
+    body:
+      encoding: ''
+      string: no
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/bnfimage R package bnfimage/v.0.0.1
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 12 Dec 2019 15:00:21 GMT
+      server: Apache
+      x-oneagent-js-injection: 'true'
+      access-control-allow-origin: '*'
+      link: <http://iiif.io/api/image/compliance.html#level2>;rel="profile"
+      content-type: image/tif
+      vary: Accept-Encoding,User-Agent
+      content-encoding: gzip
+      content-length: '422'
+    body:
+      encoding: ASCII-8BIT
+      file: no
+      string: SUkqANoAAABZTv15u3kRdQ18RmwaiDeW4pAqlKCgYp7AnvmeR1YGbXG4v7UVsJethIbZtPi6u79xxa3JO9K91snZ5HRAbRO5bakvo7qVF3DgsyDF+MwBzhTQQdSW1uPc4XmFaAiyJJs5jY9PvlhsbFqmQqsBqsyx2bcWvVXMgXmbM8I8xjsyNKJBbVCtQrg+PkLFMlo5yjYLLowz1TRFJ6ckPSPIH/kZiyFFVrolRToXUFhR/VPTTcNJQjlsLj4k+yaiJL4g5RfmP8AuskQ4U3tXDmvoeW6C8GoSAAABAwABAAAADwAAAAEBAwABAAAABwAAAAIBAwABAAAAEAAAAAMBAwABAAAAAQAAAAYBAwABAAAAAQAAAAoBAwABAAAAAQAAAA0BAgABAAAAAAAAABEBBAABAAAACAAAABIBAwABAAAAAQAAABUBAwABAAAAAQAAABYBAwABAAAAEQEAABcBBAABAAAA0gAAABoBBQABAAAAuAEAABsBBQABAAAAwAEAABwBAwABAAAAAQAAACgBAwABAAAAAgAAACkBAwACAAAAAAABADEBAgBFAAAAyAEAAAAAAAAAAAAyAAAgAAAAADIAACAASW1hZ2VNYWdpY2sgNi41LjQtNyAyMDE0LTAyLTEwIFExNiBPcGVuTVAgaHR0cDovL3d3dy5pbWFnZW1hZ2ljay5vcmcA
+  recorded_at: 2019-12-12 15:01:34 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.0
+- request:
+    method: get
+    uri: https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/f1/full/15,7/0/color.gif
+    body:
+      encoding: ''
+      string: no
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/bnfimage R package bnfimage/v.0.0.1
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 12 Dec 2019 15:00:35 GMT
+      server: Apache
+      x-oneagent-js-injection: 'true'
+      access-control-allow-origin: '*'
+      link: <http://iiif.io/api/image/compliance.html#level2>;rel="profile"
+      content-type: image/gif
+      content-length: '526'
+    body:
+      encoding: ASCII-8BIT
+      file: no
+      string: R0lGODlhDwAHAPYAABgYGBoaGiAgICEhISEhISMjIyQkJCQkJCUlJSYmJicnJycnJy4uLi4uLi8vLzMzMzMzMzMzMzQ0NDU1NTc3Nzk5OTk5OTo6Ojw8PD09PT4+PkBAQEFBQUJCQkJCQkRERElJSU5OTk5OTk9PT1BQUFBQUFFRUVNTU1RUVFZWVlZWVldXV1hYWGhoaGtra2tra2xsbGxsbG1tbW1tbXBwcHR0dHV1dXl5eXl5eXl5eXl5eXp6enx8fIKCgoaGhoiIiI2NjZCQkJSUlJWVlZaWlpubm56enp6enp6enqCgoKOjo6ampqmpqampqaurq62tra+vr7GxsbGxsbOzs7S0tLW1tbe3t7i4uLi4uLq6ury8vL+/v8TExMXFxcnJyczMzMzMzM3Nzc/Pz9HR0dPT09bW1tbW1tnZ2dzc3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAPAAcAAAdrgCI7ODY8MD9EQUJJRkdIKjJXVVBPPlRZW11eY2ZnNTNYTEpDNFNcYGFiZGVoOS1SRUAjLDFLTk1RVlpfNxEZGBIcJR4aHQ8WFAwQEwsIBQIBBCkJFyQmKCEgFQ0GCgcDABsOHycrLzo9LoEAOw==
+  recorded_at: 2019-12-12 15:01:34 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.0
+- request:
+    method: get
+    uri: https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/f1/full/15,7/0/bitonal.gif
+    body:
+      encoding: ''
+      string: no
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/bnfimage R package bnfimage/v.0.0.1
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 12 Dec 2019 15:01:10 GMT
+      server: Apache
+      x-oneagent-js-injection: 'true'
+      access-control-allow-origin: '*'
+      link: <http://iiif.io/api/image/compliance.html#level2>;rel="profile"
+      content-type: image/gif
+      content-length: '58'
+    body:
+      encoding: ASCII-8BIT
+      file: no
+      string: R0lGODlhDwAHAPABAAAAAP///yH5BAAAAAAALAAAAAAPAAcAAAIRhHOhi+wPWHxqogSN3rz7DxYAOw==
+  recorded_at: 2019-12-12 15:01:34 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.0

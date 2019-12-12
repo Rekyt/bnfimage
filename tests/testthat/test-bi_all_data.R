@@ -79,7 +79,7 @@ test_that("bi_all_data() works for a single image", {
                    colorspace = "Gray",
                    matte = FALSE,
                    filesize = 306L,
-                   density = "157x157"
+                   density = "+157x+157"
                  ))
     # Check metadata column
     expect_is(eiffel_tower$metadata, "list")
@@ -123,7 +123,7 @@ test_that("bi_all_data() works for several images", {
                    colorspace = "Gray",
                    matte = FALSE,
                    filesize = 306L,
-                   density = "157x157"
+                   density = "+157x+157"
                  ))
     eiffel_info = magick::image_info(eiffel_tower$image[[2]])
     expect_equal(eiffel_info,
@@ -134,7 +134,7 @@ test_that("bi_all_data() works for several images", {
                    colorspace = "sRGB",
                    matte = FALSE,
                    filesize = 1021L,
-                   density = "118x118"
+                   density = "+118x+118"
                  ))
     # Check metadata column
     expect_is(eiffel_tower$metadata, "list")
