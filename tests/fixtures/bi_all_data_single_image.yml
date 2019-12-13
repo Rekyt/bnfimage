@@ -1,1 +1,158 @@
-
+http_interactions:
+- request:
+    method: get
+    uri: https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/f1/full/15,7/0/native.png
+    body:
+      encoding: ''
+      string: no
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/bnfimage R package bnfimage/v.0.0.1
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Fri, 13 Dec 2019 10:37:33 GMT
+      server: Apache
+      x-oneagent-js-injection: 'true'
+      access-control-allow-origin: '*'
+      link: <http://iiif.io/api/image/compliance.html#level2>;rel="profile"
+      content-type: image/png
+      content-length: '306'
+    body:
+      encoding: ASCII-8BIT
+      file: no
+      string: iVBORw0KGgoAAAANSUhEUgAAAA8AAAAHEAAAAACifpS4AAAACXBIWXMAAD2EAAA9hAHVrK90AAAA5ElEQVQI1wHZACb/AE5Zef15u3URfA1sRogaljeQ4pQqoKCeYp7AnvlWRwBtBrhxtb+wFa2XhoS02br4v7vFccmt0jvWvdnJdOQAbUC5E6ltoy+VunAXs+DFIMz4zgHQFNRB1pbc43nhAGiFsgibJI05T49YvmxsplqrQqoBscy32b0WzFV5gQAzmzzCO8Y0MkGiUG1CrT64Qj4yxTlaNsouCzOMNNUAJ0UkpyM9H8gZ+SGLVkUlujpFUBdRWFP9TdNJwzlCAC5sJD4m+ySiIL4X5T/mLsBEslM4V3trDnnogm5q8Hv7ZTfAMNEGAAAAAElFTkSuQmCC
+  recorded_at: 2019-12-13 10:37:46 GMT
+  recorded_with: vcr/0.4.1.91, webmockr/0.5.1.91
+- request:
+    method: get
+    uri: https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/f1/manifest.json
+    body:
+      encoding: ''
+      string: no
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/bnfimage R package bnfimage/v.0.0.1
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Fri, 13 Dec 2019 10:37:46 GMT
+      server: Apache
+      x-oneagent-js-injection: 'true'
+      access-control-allow-origin: '*'
+      content-type: application/json;charset=UTF-8
+      vary: Accept-Encoding,User-Agent
+      content-encoding: gzip
+      content-length: '1132'
+    body:
+      encoding: UTF-8
+      file: no
+      string: |-
+        {
+          "@id" : "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/manifest.json",
+          "label" : "BnF, département Estampes et photographie, EI-13 (2726)",
+          "attribution" : "Bibliothèque nationale de France",
+          "license" : "https://gallica.bnf.fr/html/und/conditions-dutilisation-des-contenus-de-gallica",
+          "logo" : "https://gallica.bnf.fr/mbImage/logos/logo-bnf.png",
+          "related" : "https://gallica.bnf.fr/ark:/12148/btv1b9055204k",
+          "seeAlso" : [ "http://oai.bnf.fr/oai2/OAIHandler?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:bnf.fr:gallica/ark:/12148/btv1b9055204k" ],
+          "description" : "Monuments de Paris : La Tour Eiffel : [photographie de presse] / Agence Meurisse",
+          "metadata" : [ {
+            "label" : "Repository",
+            "value" : "Bibliothèque nationale de France"
+          }, {
+            "label" : "Digitised by",
+            "value" : "Bibliothèque nationale de France"
+          }, {
+            "label" : "Source Images",
+            "value" : "https://gallica.bnf.fr/ark:/12148/btv1b9055204k"
+          }, {
+            "label" : "Metadata Source",
+            "value" : "http://oai.bnf.fr/oai2/OAIHandler?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:bnf.fr:gallica/ark:/12148/btv1b9055204k"
+          }, {
+            "label" : "Shelfmark",
+            "value" : "Bibliothèque nationale de France, département Estampes et photographie, EI-13 (2726)"
+          }, {
+            "label" : "Title",
+            "value" : "Monuments de Paris : La Tour Eiffel : [photographie de presse] / Agence Meurisse"
+          }, {
+            "label" : "Date",
+            "value" : "1922"
+          }, {
+            "label" : "Language",
+            "value" : [ {
+              "@value" : "français"
+            } ]
+          }, {
+            "label" : "Format",
+            "value" : [ {
+              "@value" : "1 photogr. nég. sur verre ; 13 x 18 cm (sup.) ou moins"
+            }, {
+              "@value" : "image/jpeg"
+            }, {
+              "@value" : "Nombre total de vues :  1"
+            } ]
+          }, {
+            "label" : "Creator",
+            "value" : "Agence de presse Meurisse. Agence photographique"
+          }, {
+            "label" : "Relation",
+            "value" : "Notice de recueil : http://catalogue.bnf.fr/ark:/12148/cb404994307"
+          }, {
+            "label" : "Relation",
+            "value" : "Appartient à : [Recueil. Actualités 1922-06-25**1923-05-14. Agence Meurisse MEU 98603-6091 A]"
+          }, {
+            "label" : "Relation",
+            "value" : "Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb415818268"
+          }, {
+            "label" : "Type",
+            "value" : "image"
+          } ],
+          "sequences" : [ {
+            "canvases" : [ {
+              "@id" : "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/canvas/f1",
+              "label" : "NP",
+              "height" : 7000,
+              "width" : 5127,
+              "images" : [ {
+                "motivation" : "sc:painting",
+                "on" : "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/canvas/f1",
+                "resource" : {
+                  "format" : "image/jpeg",
+                  "service" : {
+                    "profile" : "http://library.stanford.edu/iiif/image-api/1.1/compliance.html#level2",
+                    "@context" : "http://iiif.io/api/image/1/context.json",
+                    "@id" : "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/f1"
+                  },
+                  "height" : 7000,
+                  "width" : 5127,
+                  "@id" : "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/f1/full/full/0/native.jpg",
+                  "@type" : "dctypes:Image"
+                },
+                "@type" : "oa:Annotation"
+              } ],
+              "thumbnail" : {
+                "@id" : "https://gallica.bnf.fr/ark:/12148/btv1b9055204k/f1.thumbnail"
+              },
+              "@type" : "sc:Canvas"
+            } ],
+            "label" : "Current Page Order",
+            "@type" : "sc:Sequence",
+            "@id" : "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/sequence/default"
+          } ],
+          "thumbnail" : {
+            "@id" : "https://gallica.bnf.fr/ark:/12148/btv1b9055204k.thumbnail"
+          },
+          "@type" : "sc:Manifest",
+          "@context" : "http://iiif.io/api/presentation/2/context.json"
+        }
+  recorded_at: 2019-12-13 10:37:46 GMT
+  recorded_with: vcr/0.4.1.91, webmockr/0.5.1.91

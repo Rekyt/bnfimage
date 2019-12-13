@@ -88,7 +88,7 @@ use_cassette("bi_image_works", {
                    colorspace = "Gray",
                    matte = FALSE,
                    filesize = 22533L,
-                   density = "+157x+157"
+                   density = "157x157"
                  ))
   })
 })
@@ -116,9 +116,14 @@ use_cassette("bi_image_smaller", {
                    colorspace = "Gray",
                    matte = FALSE,
                    filesize = 306L,
-                   density = "+157x+157"
+                   density = "157x157"
                  ))
+  })
+})
 
+use_cassette("bi_image_format", {
+
+  test_that("bi_image() works with other format", {
 
     # Change image format
     ## JPEG
@@ -141,7 +146,7 @@ use_cassette("bi_image_smaller", {
                    colorspace = "Gray",
                    matte = FALSE,
                    filesize = 224L,
-                   density = "+400x+400"
+                   density = "400x400"
                  ))
     ## TIFF
     eiffel_tower = bi_image(
@@ -163,8 +168,13 @@ use_cassette("bi_image_smaller", {
                    colorspace = "Gray",
                    matte = FALSE,
                    filesize = 525L,
-                   density = "+400x+400"
+                   density = "400x400"
                  ))
+  })
+})
+
+use_cassette("bi_image_color", {
+  test_that("bi_image() works with other colors", {
 
     # Color
     ## Color
@@ -187,7 +197,13 @@ use_cassette("bi_image_smaller", {
                    colorspace = "sRGB",
                    matte = FALSE,
                    filesize = 526L,
-                   density = "+72x+72"))
+                   density = "72x72"))
+
+  })
+})
+
+use_cassette("bi_image_bitonal", {
+  test_that("bi_image() works with bitonal colors", {
     ## Bitonal
     eiffel_tower = bi_image(
       identifier = "ark:/12148/btv1b9055204k/f1",
@@ -208,7 +224,7 @@ use_cassette("bi_image_smaller", {
                    colorspace = "sRGB",
                    matte = FALSE,
                    filesize = 58L,
-                   density = "+72x+72"))
+                   density = "72x72"))
 
   })
-}, preserve_exact_body_bytes = TRUE)
+})

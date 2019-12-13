@@ -79,14 +79,14 @@ test_that("bi_all_data() works for a single image", {
                    colorspace = "Gray",
                    matte = FALSE,
                    filesize = 306L,
-                   density = "+157x+157"
+                   density = "157x157"
                  ))
     # Check metadata column
     expect_is(eiffel_tower$metadata, "list")
     expect_is(eiffel_tower$metadata[[1]], "list")
     expect_equal(eiffel_tower$metadata[[1]]$attribution,
-                 "Bibliothèque nationale de France")
-  }, preserve_exact_body_bytes = TRUE)
+                 "BibliothÃ¨que nationale de France")
+  })
 
 })
 
@@ -123,7 +123,7 @@ test_that("bi_all_data() works for several images", {
                    colorspace = "Gray",
                    matte = FALSE,
                    filesize = 306L,
-                   density = "+157x+157"
+                   density = "157x157"
                  ))
     eiffel_info = magick::image_info(eiffel_tower$image[[2]])
     expect_equal(eiffel_info,
@@ -134,19 +134,19 @@ test_that("bi_all_data() works for several images", {
                    colorspace = "sRGB",
                    matte = FALSE,
                    filesize = 1021L,
-                   density = "+118x+118"
+                   density = "118x118"
                  ))
     # Check metadata column
     expect_is(eiffel_tower$metadata, "list")
     expect_is(eiffel_tower$metadata[[1]], "list")
     expect_is(eiffel_tower$metadata[[2]], "list")
     expect_equal(eiffel_tower$metadata[[1]]$attribution,
-                 "Bibliothèque nationale de France")
+                 "BibliothÃ¨que nationale de France")
     expect_equal(eiffel_tower$metadata[[2]]$attribution,
-                 "Bibliothèque nationale de France")
+                 "BibliothÃ¨que nationale de France")
     expect_equal(eiffel_tower$metadata[[1]]$label,
-                 "BnF, département Estampes et photographie, EI-13 (2726)")
+                 "BnF, dÃ©partement Estampes et photographie, EI-13 (2726)")
     expect_equal(eiffel_tower$metadata[[2]]$label,
                  "BnF, ENT DN-1 (CHERET,Jules/98)-ROUL")
-  }, preserve_exact_body_bytes = TRUE)
+  })
 })
