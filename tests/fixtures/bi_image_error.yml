@@ -1,0 +1,45 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://gallica.bnf.fr/iiif/ark:/12148/12345/full/15,7/0/native.png
+    body:
+      encoding: ''
+      string: no
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/bnfimage R package bnfimage/v.0.0.1
+  response:
+    status:
+      status_code: 500
+      category: Server error
+      reason: Internal Server Error
+      message: 'Server error: (500) Internal Server Error'
+    headers:
+      date: Fri, 13 Dec 2019 10:29:46 GMT
+      server: Apache
+      x-oneagent-js-injection: 'true'
+      content-type: text/html;charset=utf-8
+      content-language: fr
+      content-length: '2556'
+      connection: close
+    body:
+      encoding: UTF-8
+      file: no
+      string: "<!doctype html><html lang=\"fr\"><head><title>État HTTP 500 – Internal
+        Server Error</title><style type=\"text/css\">h1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;}
+        h2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;}
+        h3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;}
+        body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;}
+        b {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;}
+        p {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}
+        a {color:black;} a.name {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>État
+        HTTP 500 – Internal Server Error</h1><hr class=\"line\" /><p><b>Type</b>
+        Rapport d''exception</p><p><b>message</b> Could not resolve view with name
+        &#39;error&#39; in servlet with name &#39;arkDispatcherServlet&#39;</p><p><b>description</b>
+        Le serveur a rencontré une erreur interne qui l''a empêché de satisfaire
+        la requête.</p><p><b>exception</b></p><pre>javax.servlet.ServletException:
+        Could not resolve view with name &#39;error&#39; in servlet with name &#39;arkDispatcherServlet&#39;\n\torg.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1305)\n\torg.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1069)\n\torg.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1008)\n\torg.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)\n\torg.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974)\n\torg.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866)\n\tjavax.servlet.http.HttpServlet.service(HttpServlet.java:635)\n\torg.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851)\n\tjavax.servlet.http.HttpServlet.service(HttpServlet.java:742)\n\torg.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)\n\torg.jasig.cas.client.session.SingleSignOutFilter.doFilter(SingleSignOutFilter.java:100)\n\torg.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)\n\torg.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)\n</pre><p><b>note</b>
+        La trace complète de la cause mère de cette erreur est disponible dans les
+        fichiers journaux de ce serveur.</p><hr class=\"line\" /><h3>XXXXX/XXXXX</h3></body></html>"
+  recorded_at: 2019-12-13 10:29:55 GMT
+  recorded_with: vcr/0.4.1.91, webmockr/0.5.1.91
