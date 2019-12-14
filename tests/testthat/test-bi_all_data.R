@@ -85,8 +85,8 @@ test_that("bi_all_data() works for a single image", {
     expect_is(eiffel_tower$metadata, "list")
     expect_is(eiffel_tower$metadata[[1]], "list")
     expect_equal(eiffel_tower$metadata[[1]]$attribution,
-                 "BibliothÃ¨que nationale de France")
-  })
+                 "Bibliothèque nationale de France")
+  }, preserve_exact_body_bytes = TRUE)
 
 })
 
@@ -141,12 +141,12 @@ test_that("bi_all_data() works for several images", {
     expect_is(eiffel_tower$metadata[[1]], "list")
     expect_is(eiffel_tower$metadata[[2]], "list")
     expect_equal(eiffel_tower$metadata[[1]]$attribution,
-                 "BibliothÃ¨que nationale de France")
+                 "Bibliothèque nationale de France")
     expect_equal(eiffel_tower$metadata[[2]]$attribution,
-                 "BibliothÃ¨que nationale de France")
+                 "Bibliothèque nationale de France")
     expect_equal(eiffel_tower$metadata[[1]]$label,
-                 "BnF, dÃ©partement Estampes et photographie, EI-13 (2726)")
+                 "BnF, département Estampes et photographie, EI-13 (2726)")
     expect_equal(eiffel_tower$metadata[[2]]$label,
                  "BnF, ENT DN-1 (CHERET,Jules/98)-ROUL")
-  })
+  }, preserve_exact_body_bytes = TRUE)
 })

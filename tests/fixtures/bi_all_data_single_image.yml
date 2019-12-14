@@ -15,7 +15,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 13 Dec 2019 10:37:33 GMT
+      date: Sat, 14 Dec 2019 08:48:35 GMT
       server: Apache
       x-oneagent-js-injection: 'true'
       access-control-allow-origin: '*'
@@ -26,8 +26,8 @@ http_interactions:
       encoding: ASCII-8BIT
       file: no
       string: iVBORw0KGgoAAAANSUhEUgAAAA8AAAAHEAAAAACifpS4AAAACXBIWXMAAD2EAAA9hAHVrK90AAAA5ElEQVQI1wHZACb/AE5Zef15u3URfA1sRogaljeQ4pQqoKCeYp7AnvlWRwBtBrhxtb+wFa2XhoS02br4v7vFccmt0jvWvdnJdOQAbUC5E6ltoy+VunAXs+DFIMz4zgHQFNRB1pbc43nhAGiFsgibJI05T49YvmxsplqrQqoBscy32b0WzFV5gQAzmzzCO8Y0MkGiUG1CrT64Qj4yxTlaNsouCzOMNNUAJ0UkpyM9H8gZ+SGLVkUlujpFUBdRWFP9TdNJwzlCAC5sJD4m+ySiIL4X5T/mLsBEslM4V3trDnnogm5q8Hv7ZTfAMNEGAAAAAElFTkSuQmCC
-  recorded_at: 2019-12-13 10:37:46 GMT
-  recorded_with: vcr/0.4.1.91, webmockr/0.5.1.91
+  recorded_at: 2019-12-14 08:48:39 GMT
+  recorded_with: vcr/0.4.1.92, webmockr/0.5.1.91
 - request:
     method: get
     uri: https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/f1/manifest.json
@@ -44,7 +44,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 13 Dec 2019 10:37:46 GMT
+      date: Sat, 14 Dec 2019 08:48:38 GMT
       server: Apache
       x-oneagent-js-injection: 'true'
       access-control-allow-origin: '*'
@@ -53,106 +53,8 @@ http_interactions:
       content-encoding: gzip
       content-length: '1132'
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       file: no
-      string: |-
-        {
-          "@id" : "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/manifest.json",
-          "label" : "BnF, département Estampes et photographie, EI-13 (2726)",
-          "attribution" : "Bibliothèque nationale de France",
-          "license" : "https://gallica.bnf.fr/html/und/conditions-dutilisation-des-contenus-de-gallica",
-          "logo" : "https://gallica.bnf.fr/mbImage/logos/logo-bnf.png",
-          "related" : "https://gallica.bnf.fr/ark:/12148/btv1b9055204k",
-          "seeAlso" : [ "http://oai.bnf.fr/oai2/OAIHandler?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:bnf.fr:gallica/ark:/12148/btv1b9055204k" ],
-          "description" : "Monuments de Paris : La Tour Eiffel : [photographie de presse] / Agence Meurisse",
-          "metadata" : [ {
-            "label" : "Repository",
-            "value" : "Bibliothèque nationale de France"
-          }, {
-            "label" : "Digitised by",
-            "value" : "Bibliothèque nationale de France"
-          }, {
-            "label" : "Source Images",
-            "value" : "https://gallica.bnf.fr/ark:/12148/btv1b9055204k"
-          }, {
-            "label" : "Metadata Source",
-            "value" : "http://oai.bnf.fr/oai2/OAIHandler?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:bnf.fr:gallica/ark:/12148/btv1b9055204k"
-          }, {
-            "label" : "Shelfmark",
-            "value" : "Bibliothèque nationale de France, département Estampes et photographie, EI-13 (2726)"
-          }, {
-            "label" : "Title",
-            "value" : "Monuments de Paris : La Tour Eiffel : [photographie de presse] / Agence Meurisse"
-          }, {
-            "label" : "Date",
-            "value" : "1922"
-          }, {
-            "label" : "Language",
-            "value" : [ {
-              "@value" : "français"
-            } ]
-          }, {
-            "label" : "Format",
-            "value" : [ {
-              "@value" : "1 photogr. nég. sur verre ; 13 x 18 cm (sup.) ou moins"
-            }, {
-              "@value" : "image/jpeg"
-            }, {
-              "@value" : "Nombre total de vues :  1"
-            } ]
-          }, {
-            "label" : "Creator",
-            "value" : "Agence de presse Meurisse. Agence photographique"
-          }, {
-            "label" : "Relation",
-            "value" : "Notice de recueil : http://catalogue.bnf.fr/ark:/12148/cb404994307"
-          }, {
-            "label" : "Relation",
-            "value" : "Appartient à : [Recueil. Actualités 1922-06-25**1923-05-14. Agence Meurisse MEU 98603-6091 A]"
-          }, {
-            "label" : "Relation",
-            "value" : "Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb415818268"
-          }, {
-            "label" : "Type",
-            "value" : "image"
-          } ],
-          "sequences" : [ {
-            "canvases" : [ {
-              "@id" : "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/canvas/f1",
-              "label" : "NP",
-              "height" : 7000,
-              "width" : 5127,
-              "images" : [ {
-                "motivation" : "sc:painting",
-                "on" : "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/canvas/f1",
-                "resource" : {
-                  "format" : "image/jpeg",
-                  "service" : {
-                    "profile" : "http://library.stanford.edu/iiif/image-api/1.1/compliance.html#level2",
-                    "@context" : "http://iiif.io/api/image/1/context.json",
-                    "@id" : "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/f1"
-                  },
-                  "height" : 7000,
-                  "width" : 5127,
-                  "@id" : "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/f1/full/full/0/native.jpg",
-                  "@type" : "dctypes:Image"
-                },
-                "@type" : "oa:Annotation"
-              } ],
-              "thumbnail" : {
-                "@id" : "https://gallica.bnf.fr/ark:/12148/btv1b9055204k/f1.thumbnail"
-              },
-              "@type" : "sc:Canvas"
-            } ],
-            "label" : "Current Page Order",
-            "@type" : "sc:Sequence",
-            "@id" : "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/sequence/default"
-          } ],
-          "thumbnail" : {
-            "@id" : "https://gallica.bnf.fr/ark:/12148/btv1b9055204k.thumbnail"
-          },
-          "@type" : "sc:Manifest",
-          "@context" : "http://iiif.io/api/presentation/2/context.json"
-        }
-  recorded_at: 2019-12-13 10:37:46 GMT
-  recorded_with: vcr/0.4.1.91, webmockr/0.5.1.91
+      string: ewogICJAaWQiIDogImh0dHBzOi8vZ2FsbGljYS5ibmYuZnIvaWlpZi9hcms6LzEyMTQ4L2J0djFiOTA1NTIwNGsvbWFuaWZlc3QuanNvbiIsCiAgImxhYmVsIiA6ICJCbkYsIGTDqXBhcnRlbWVudCBFc3RhbXBlcyBldCBwaG90b2dyYXBoaWUsIEVJLTEzICgyNzI2KSIsCiAgImF0dHJpYnV0aW9uIiA6ICJCaWJsaW90aMOocXVlIG5hdGlvbmFsZSBkZSBGcmFuY2UiLAogICJsaWNlbnNlIiA6ICJodHRwczovL2dhbGxpY2EuYm5mLmZyL2h0bWwvdW5kL2NvbmRpdGlvbnMtZHV0aWxpc2F0aW9uLWRlcy1jb250ZW51cy1kZS1nYWxsaWNhIiwKICAibG9nbyIgOiAiaHR0cHM6Ly9nYWxsaWNhLmJuZi5mci9tYkltYWdlL2xvZ29zL2xvZ28tYm5mLnBuZyIsCiAgInJlbGF0ZWQiIDogImh0dHBzOi8vZ2FsbGljYS5ibmYuZnIvYXJrOi8xMjE0OC9idHYxYjkwNTUyMDRrIiwKICAic2VlQWxzbyIgOiBbICJodHRwOi8vb2FpLmJuZi5mci9vYWkyL09BSUhhbmRsZXI/dmVyYj1HZXRSZWNvcmQmbWV0YWRhdGFQcmVmaXg9b2FpX2RjJmlkZW50aWZpZXI9b2FpOmJuZi5mcjpnYWxsaWNhL2FyazovMTIxNDgvYnR2MWI5MDU1MjA0ayIgXSwKICAiZGVzY3JpcHRpb24iIDogIk1vbnVtZW50cyBkZSBQYXJpcyA6IExhIFRvdXIgRWlmZmVsIDogW3Bob3RvZ3JhcGhpZSBkZSBwcmVzc2VdIC8gQWdlbmNlIE1ldXJpc3NlIiwKICAibWV0YWRhdGEiIDogWyB7CiAgICAibGFiZWwiIDogIlJlcG9zaXRvcnkiLAogICAgInZhbHVlIiA6ICJCaWJsaW90aMOocXVlIG5hdGlvbmFsZSBkZSBGcmFuY2UiCiAgfSwgewogICAgImxhYmVsIiA6ICJEaWdpdGlzZWQgYnkiLAogICAgInZhbHVlIiA6ICJCaWJsaW90aMOocXVlIG5hdGlvbmFsZSBkZSBGcmFuY2UiCiAgfSwgewogICAgImxhYmVsIiA6ICJTb3VyY2UgSW1hZ2VzIiwKICAgICJ2YWx1ZSIgOiAiaHR0cHM6Ly9nYWxsaWNhLmJuZi5mci9hcms6LzEyMTQ4L2J0djFiOTA1NTIwNGsiCiAgfSwgewogICAgImxhYmVsIiA6ICJNZXRhZGF0YSBTb3VyY2UiLAogICAgInZhbHVlIiA6ICJodHRwOi8vb2FpLmJuZi5mci9vYWkyL09BSUhhbmRsZXI/dmVyYj1HZXRSZWNvcmQmbWV0YWRhdGFQcmVmaXg9b2FpX2RjJmlkZW50aWZpZXI9b2FpOmJuZi5mcjpnYWxsaWNhL2FyazovMTIxNDgvYnR2MWI5MDU1MjA0ayIKICB9LCB7CiAgICAibGFiZWwiIDogIlNoZWxmbWFyayIsCiAgICAidmFsdWUiIDogIkJpYmxpb3Row6hxdWUgbmF0aW9uYWxlIGRlIEZyYW5jZSwgZMOpcGFydGVtZW50IEVzdGFtcGVzIGV0IHBob3RvZ3JhcGhpZSwgRUktMTMgKDI3MjYpIgogIH0sIHsKICAgICJsYWJlbCIgOiAiVGl0bGUiLAogICAgInZhbHVlIiA6ICJNb251bWVudHMgZGUgUGFyaXMgOiBMYSBUb3VyIEVpZmZlbCA6IFtwaG90b2dyYXBoaWUgZGUgcHJlc3NlXSAvIEFnZW5jZSBNZXVyaXNzZSIKICB9LCB7CiAgICAibGFiZWwiIDogIkRhdGUiLAogICAgInZhbHVlIiA6ICIxOTIyIgogIH0sIHsKICAgICJsYWJlbCIgOiAiTGFuZ3VhZ2UiLAogICAgInZhbHVlIiA6IFsgewogICAgICAiQHZhbHVlIiA6ICJmcmFuw6dhaXMiCiAgICB9IF0KICB9LCB7CiAgICAibGFiZWwiIDogIkZvcm1hdCIsCiAgICAidmFsdWUiIDogWyB7CiAgICAgICJAdmFsdWUiIDogIjEgcGhvdG9nci4gbsOpZy4gc3VyIHZlcnJlIDsgMTMgeCAxOCBjbSAoc3VwLikgb3UgbW9pbnMiCiAgICB9LCB7CiAgICAgICJAdmFsdWUiIDogImltYWdlL2pwZWciCiAgICB9LCB7CiAgICAgICJAdmFsdWUiIDogIk5vbWJyZSB0b3RhbCBkZSB2dWVzIDogIDEiCiAgICB9IF0KICB9LCB7CiAgICAibGFiZWwiIDogIkNyZWF0b3IiLAogICAgInZhbHVlIiA6ICJBZ2VuY2UgZGUgcHJlc3NlIE1ldXJpc3NlLiBBZ2VuY2UgcGhvdG9ncmFwaGlxdWUiCiAgfSwgewogICAgImxhYmVsIiA6ICJSZWxhdGlvbiIsCiAgICAidmFsdWUiIDogIk5vdGljZSBkZSByZWN1ZWlsIDogaHR0cDovL2NhdGFsb2d1ZS5ibmYuZnIvYXJrOi8xMjE0OC9jYjQwNDk5NDMwNyIKICB9LCB7CiAgICAibGFiZWwiIDogIlJlbGF0aW9uIiwKICAgICJ2YWx1ZSIgOiAiQXBwYXJ0aWVudCDDoCA6IFtSZWN1ZWlsLiBBY3R1YWxpdMOpcyAxOTIyLTA2LTI1KioxOTIzLTA1LTE0LiBBZ2VuY2UgTWV1cmlzc2UgTUVVIDk4NjAzLTYwOTEgQV0iCiAgfSwgewogICAgImxhYmVsIiA6ICJSZWxhdGlvbiIsCiAgICAidmFsdWUiIDogIk5vdGljZSBkdSBjYXRhbG9ndWUgOiBodHRwOi8vY2F0YWxvZ3VlLmJuZi5mci9hcms6LzEyMTQ4L2NiNDE1ODE4MjY4IgogIH0sIHsKICAgICJsYWJlbCIgOiAiVHlwZSIsCiAgICAidmFsdWUiIDogImltYWdlIgogIH0gXSwKICAic2VxdWVuY2VzIiA6IFsgewogICAgImNhbnZhc2VzIiA6IFsgewogICAgICAiQGlkIiA6ICJodHRwczovL2dhbGxpY2EuYm5mLmZyL2lpaWYvYXJrOi8xMjE0OC9idHYxYjkwNTUyMDRrL2NhbnZhcy9mMSIsCiAgICAgICJsYWJlbCIgOiAiTlAiLAogICAgICAiaGVpZ2h0IiA6IDcwMDAsCiAgICAgICJ3aWR0aCIgOiA1MTI3LAogICAgICAiaW1hZ2VzIiA6IFsgewogICAgICAgICJtb3RpdmF0aW9uIiA6ICJzYzpwYWludGluZyIsCiAgICAgICAgIm9uIiA6ICJodHRwczovL2dhbGxpY2EuYm5mLmZyL2lpaWYvYXJrOi8xMjE0OC9idHYxYjkwNTUyMDRrL2NhbnZhcy9mMSIsCiAgICAgICAgInJlc291cmNlIiA6IHsKICAgICAgICAgICJmb3JtYXQiIDogImltYWdlL2pwZWciLAogICAgICAgICAgInNlcnZpY2UiIDogewogICAgICAgICAgICAicHJvZmlsZSIgOiAiaHR0cDovL2xpYnJhcnkuc3RhbmZvcmQuZWR1L2lpaWYvaW1hZ2UtYXBpLzEuMS9jb21wbGlhbmNlLmh0bWwjbGV2ZWwyIiwKICAgICAgICAgICAgIkBjb250ZXh0IiA6ICJodHRwOi8vaWlpZi5pby9hcGkvaW1hZ2UvMS9jb250ZXh0Lmpzb24iLAogICAgICAgICAgICAiQGlkIiA6ICJodHRwczovL2dhbGxpY2EuYm5mLmZyL2lpaWYvYXJrOi8xMjE0OC9idHYxYjkwNTUyMDRrL2YxIgogICAgICAgICAgfSwKICAgICAgICAgICJoZWlnaHQiIDogNzAwMCwKICAgICAgICAgICJ3aWR0aCIgOiA1MTI3LAogICAgICAgICAgIkBpZCIgOiAiaHR0cHM6Ly9nYWxsaWNhLmJuZi5mci9paWlmL2FyazovMTIxNDgvYnR2MWI5MDU1MjA0ay9mMS9mdWxsL2Z1bGwvMC9uYXRpdmUuanBnIiwKICAgICAgICAgICJAdHlwZSIgOiAiZGN0eXBlczpJbWFnZSIKICAgICAgICB9LAogICAgICAgICJAdHlwZSIgOiAib2E6QW5ub3RhdGlvbiIKICAgICAgfSBdLAogICAgICAidGh1bWJuYWlsIiA6IHsKICAgICAgICAiQGlkIiA6ICJodHRwczovL2dhbGxpY2EuYm5mLmZyL2FyazovMTIxNDgvYnR2MWI5MDU1MjA0ay9mMS50aHVtYm5haWwiCiAgICAgIH0sCiAgICAgICJAdHlwZSIgOiAic2M6Q2FudmFzIgogICAgfSBdLAogICAgImxhYmVsIiA6ICJDdXJyZW50IFBhZ2UgT3JkZXIiLAogICAgIkB0eXBlIiA6ICJzYzpTZXF1ZW5jZSIsCiAgICAiQGlkIiA6ICJodHRwczovL2dhbGxpY2EuYm5mLmZyL2lpaWYvYXJrOi8xMjE0OC9idHYxYjkwNTUyMDRrL3NlcXVlbmNlL2RlZmF1bHQiCiAgfSBdLAogICJ0aHVtYm5haWwiIDogewogICAgIkBpZCIgOiAiaHR0cHM6Ly9nYWxsaWNhLmJuZi5mci9hcms6LzEyMTQ4L2J0djFiOTA1NTIwNGsudGh1bWJuYWlsIgogIH0sCiAgIkB0eXBlIiA6ICJzYzpNYW5pZmVzdCIsCiAgIkBjb250ZXh0IiA6ICJodHRwOi8vaWlpZi5pby9hcGkvcHJlc2VudGF0aW9uLzIvY29udGV4dC5qc29uIgp9
+  recorded_at: 2019-12-14 08:48:39 GMT
+  recorded_with: vcr/0.4.1.92, webmockr/0.5.1.91
