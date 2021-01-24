@@ -1,0 +1,75 @@
+---
+title: "bnfimage - Tutorial"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{bnfimage - Tutorial}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(bnfimage)
+```
+
+<!-- Should use vcr cassette to record all interactions in vignette -->
+
+The BnF Gallica image library contains thousands of freely accessible images of historical interests. It provides an Application Programming Interface to access it ([see their documentation](https://api.bnf.fr/api-iiif-de-recuperation-des-images-de-gallica#scroll-nav__1)). The access is possible through the [IIIF](https://iiif.io/) API. The goal of `bnfimage` is to let you access this API directly from R.
+
+## Accessing Images
+
+To get a specific image, you first need to get its identifier from Gallica.
+The identifier is a string that begins with `ark:/`. It is accessible from browsing [Gallica](https://gallica.bnf.fr) as the URL of the object such as: `https://gallica.bnf.fr/ark:/12148/bpt6k10411495/f11.item#` giving the id `ark:/12148/bpt6k10411495/f11`.
+
+### Single Image - `bi_image()`
+
+To download a single image you can use the `bi_image()` with the identifier of the object:
+
+```{r bi-image}
+bi_image("ark:/12148/bpt6k10411495/f11")
+```
+
+This displays a small portion of the image as by default this functions only returns the top left corner of the image from 0 to 500px in both directions.
+
+To get the full image you can use the argument `region` with the value `"full"`:
+
+```{r bi-image-region-full}
+bi_image("ark:/12148/bpt6k10411495/f11", region = "full")
+```
+
+Otherwise if you wan to crop a specific region in the image you can define it as length 4 numeric vector specifiying the coordinates of the top left most point and the bottom right point. For example if you want to extract the image from 1250px x and 1300px y to 1600px x and 1650px y you would call:
+
+```{r bi-image-region-crop}
+bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650))
+```
+
+Saving the images. How to save them and which format?
+
+### Multiple Images
+
+Similar way for multiple images.
+
+## Accessing Metadata
+
+One interest of the BnF image library is the amount of metadata associated with
+metadata.
+For the moment bnfimage only converts metadata to a giant list so need more
+transformation to be usable.
+
+### Single Image
+
+Same as before, images are identified through their identifier. For composed documents blabla.
+
+### Multiple Images
+
+Idem
+
+## Accessing Both Images and Metadata
+
+Short condensed format to extract all corresponding data for all images.
