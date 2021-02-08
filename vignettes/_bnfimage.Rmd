@@ -18,16 +18,14 @@ knitr::opts_chunk$set(
 library(bnfimage)
 ```
 
-<!-- Should use vcr cassette to record all interactions in vignette -->
-
 The BnF Gallica image library contains thousands of freely accessible images of historical interests. It provides an Application Programming Interface to access it ([see their documentation](https://api.bnf.fr/api-iiif-de-recuperation-des-images-de-gallica#scroll-nav__1)). The access is possible through the [IIIF](https://iiif.io/) API. The goal of `bnfimage` is to let you access this API directly from R.
 
-## Accessing Images
+## Accessing Images - `bi_image()`
 
 To get a specific image, you first need to get its identifier from Gallica.
 The identifier is a string that begins with `ark:/`. It is accessible from browsing [Gallica](https://gallica.bnf.fr) as the URL of the object such as: `https://gallica.bnf.fr/ark:/12148/bpt6k10411495/f11.item#` giving the id `ark:/12148/bpt6k10411495/f11`.
 
-### Single Image - `bi_image()`
+### Single Image
 
 To download a single image you can use the `bi_image()` with the identifier of the object:
 
@@ -49,27 +47,74 @@ Otherwise if you wan to crop a specific region in the image you can define it as
 bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650))
 ```
 
-Saving the images. How to save them and which format?
+To save the images you can use the function `image_write()` in the `magick`
+package. `image_write()` can accept any image filetype:
+
+```{r bi-image-save}
+img = bi_image("ark:/12148/bpt6k10411495/f11",
+               region = c(1250, 1300, 1600, 1650))
+
+magick::image_write(img, "./my_image.png")
+```
+
+The second argument specifies the file path. Refer to the help of the function
+through `?magick::image_write` to get an overview of all the arguments and uses.
 
 ### Multiple Images
 
-Similar way for multiple images.
+To access several images you can use a list of identifier and wrap calls
+to `bi_image()` using `lapply()`:
 
-## Accessing Metadata
+```{r bi-several-imgs}
+several_ids = c("ark:/12148/bpt6k10411495/f11", "ark:/12148/bpt6k10411495/f13",
+                "ark:/12148/bpt6k10411495/f15")
 
-One interest of the BnF image library is the amount of metadata associated with
-metadata.
-For the moment bnfimage only converts metadata to a giant list so need more
-transformation to be usable.
+several_imgs = lapply(several_ids, bi_image, region = "full",
+                      size = c(200, 500))
+
+several_imgs
+```
+
+## Accessing Metadata - `bi_metadata()`
+
+One interest of the BnF image library is the richness of the metadata associated
+with an image. For the moment bnfimage only converts metadata to a giant list
+to make it accessible.
 
 ### Single Image
 
-Same as before, images are identified through their identifier. For composed documents blabla.
+Using a single image identifier you can retrieve the metadata of an image
+through the function `bi_metadata()`. The first argument is the identifier of
+the image as for `bi_image()`:
+
+```{r bi-metadata}
+met = bi_metadata("ark:/12148/bpt6k10411495/f11")
+
+str(met, max.level = 1)
+```
+
+The metadata contains much information on the actual image as well as its
+context.
 
 ### Multiple Images
 
-Idem
+Similarly as for `bi_image()` to access the metadata of several images you can
+wrap the calls to `bi_metadata()` through a list of identifiers using
+`lapply()`:
 
-## Accessing Both Images and Metadata
+```{r bi-metadata-all}
+several_met = lapply(several_ids, bi_metadata)
 
-Short condensed format to extract all corresponding data for all images.
+str(several_met, max.level = 2)
+```
+
+## Accessing Both Images and Metadata - `bi_all_data()`
+
+The `bi_all_data()` function can be used to quickly retrieve both the images as
+well as the associated metadata of one or several images. The outputs stores the
+identifier of an image in a column, the actual image in a second one, and the
+associated metadata in a third one:
+
+```{r bi-all-data}
+bi_all_data(c("ark:/12148/bpt6k10411495/f11", "ark:/12148/bpt6k10411495/f12"))
+```
