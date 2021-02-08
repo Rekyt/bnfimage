@@ -7,5 +7,5 @@
 ^docs$
 ^pkgdown$
 ^.travis.yml$
-vignettes/_bnfimage.Rmd
+^vignettes/_bnfimage.Rmd$
 ^\.github$

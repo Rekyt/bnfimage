@@ -1,5 +1,5 @@
 Package: bnfimage
-Title: BnF Image API client
+Title: BnF Image API Client
 Version: 0.0.1
 Authors@R: 
     person("Matthias", "Grenié",
@@ -21,4 +21,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.0.2
 Suggests: 
     testthat (>= 2.1.0),
-    vcr (>= 0.4.1.92)
+    vcr (>= 0.4.1.92),
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
