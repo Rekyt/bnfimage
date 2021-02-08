@@ -14,7 +14,8 @@ LazyData: true
 Imports: 
     httr,
     magick,
-    tibble
+    tibble,
+    ratelimitr
 URL: https://rekyt.github.io/bnfimage, https://github.com/Rekyt/bnfimage
 BugReports: https://github.com/Rekyt/bnfimage/issues
 Roxygen: list(markdown = TRUE)

@@ -3,6 +3,11 @@ bi_GET = function(...) {
             httr::add_headers("user-agent" = bi_ua()))
 }
 
+# Rate limite version that allows only one query every 3 seconds
+bi_GET_lim = ratelimitr::limit_rate(
+  bi_GET, ratelimitr::rate(1, 3)
+)
+
 bi_base = function() {
   "https://gallica.bnf.fr/iiif"
 }
