@@ -1,0 +1,61 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/f1/full/15,7/0/native.jpg
+    body:
+      encoding: ''
+      string: no
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/bnfimage R package bnfimage/v.0.0.1
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Fri, 13 Dec 2019 10:31:03 GMT
+      server: Apache
+      x-oneagent-js-injection: 'true'
+      access-control-allow-origin: '*'
+      link: <http://iiif.io/api/image/compliance.html#level2>;rel="profile"
+      content-type: image/jpeg
+      content-length: '224'
+    body:
+      encoding: ASCII-8BIT
+      file: no
+      string: /9j/4AAQSkZJRgABAQEBkAGQAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/wAALCAAHAA8BAREA/8QAFAABAAAAAAAAAAAAAAAAAAAABv/EACQQAAEDAgQHAAAAAAAAAAAAAAECAwQFEQAGMVEHEhMhIkFh/9oACAEBAAA/ACUXiSy2/BbaosdCY6LKBseqUptqALe9+9sKZ+dnqtQpEdrLMMIXy+aZABTZQOhR83x//9k=
+  recorded_at: 2019-12-13 10:31:36 GMT
+  recorded_with: vcr/0.4.1.91, webmockr/0.5.1.91
+- request:
+    method: get
+    uri: https://gallica.bnf.fr/iiif/ark:/12148/btv1b9055204k/f1/full/15,7/0/native.tif
+    body:
+      encoding: ''
+      string: no
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/bnfimage R package bnfimage/v.0.0.1
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Fri, 13 Dec 2019 10:31:27 GMT
+      server: Apache
+      x-oneagent-js-injection: 'true'
+      access-control-allow-origin: '*'
+      link: <http://iiif.io/api/image/compliance.html#level2>;rel="profile"
+      content-type: image/tif
+      vary: Accept-Encoding,User-Agent
+      content-encoding: gzip
+      content-length: '422'
+    body:
+      encoding: ASCII-8BIT
+      file: no
+      string: SUkqANoAAABZTv15u3kRdQ18RmwaiDeW4pAqlKCgYp7AnvmeR1YGbXG4v7UVsJethIbZtPi6u79xxa3JO9K91snZ5HRAbRO5bakvo7qVF3DgsyDF+MwBzhTQQdSW1uPc4XmFaAiyJJs5jY9PvlhsbFqmQqsBqsyx2bcWvVXMgXmbM8I8xjsyNKJBbVCtQrg+PkLFMlo5yjYLLowz1TRFJ6ckPSPIH/kZiyFFVrolRToXUFhR/VPTTcNJQjlsLj4k+yaiJL4g5RfmP8AuskQ4U3tXDmvoeW6C8GoSAAABAwABAAAADwAAAAEBAwABAAAABwAAAAIBAwABAAAAEAAAAAMBAwABAAAAAQAAAAYBAwABAAAAAQAAAAoBAwABAAAAAQAAAA0BAgABAAAAAAAAABEBBAABAAAACAAAABIBAwABAAAAAQAAABUBAwABAAAAAQAAABYBAwABAAAAEQEAABcBBAABAAAA0gAAABoBBQABAAAAuAEAABsBBQABAAAAwAEAABwBAwABAAAAAQAAACgBAwABAAAAAgAAACkBAwACAAAAAAABADEBAgBFAAAAyAEAAAAAAAAAAAAyAAAgAAAAADIAACAASW1hZ2VNYWdpY2sgNi41LjQtNyAyMDE0LTAyLTEwIFExNiBPcGVuTVAgaHR0cDovL3d3dy5pbWFnZW1hZ2ljay5vcmcA
+  recorded_at: 2019-12-13 10:31:36 GMT
+  recorded_with: vcr/0.4.1.91, webmockr/0.5.1.91

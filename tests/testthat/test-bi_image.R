@@ -50,7 +50,7 @@ test_that("bi_image() fails gracefully on wrong arguments", {
                "'arg' must be NULL or a character vector", fixed = TRUE)
 })
 
-use_cassette("bi_image", {
+use_cassette("bi_image_error", {
   test_that("bi_image() fails gracefully when sending a wrong query", {
     expect_error(
       bi_image(
@@ -62,7 +62,9 @@ use_cassette("bi_image", {
         format     = "png"),
       "The query gave no answer. Please try another query", fixed = TRUE)
   })
+})
 
+use_cassette("bi_image_works", {
   test_that("bi_image() works with correct query", {
 
     # Regular query
@@ -88,7 +90,12 @@ use_cassette("bi_image", {
                    filesize = 22533L,
                    density = "157x157"
                  ))
+  })
+})
 
+use_cassette("bi_image_smaller", {
+
+  test_that("bi_image() works with options", {
     # Smaller size
     eiffel_tower = bi_image(
       identifier = "ark:/12148/btv1b9055204k/f1",
@@ -111,7 +118,12 @@ use_cassette("bi_image", {
                    filesize = 306L,
                    density = "157x157"
                  ))
+  })
+})
 
+use_cassette("bi_image_format", {
+
+  test_that("bi_image() works with other format", {
 
     # Change image format
     ## JPEG
@@ -158,6 +170,11 @@ use_cassette("bi_image", {
                    filesize = 525L,
                    density = "400x400"
                  ))
+  })
+})
+
+use_cassette("bi_image_color", {
+  test_that("bi_image() works with other colors", {
 
     # Color
     ## Color
@@ -181,6 +198,12 @@ use_cassette("bi_image", {
                    matte = FALSE,
                    filesize = 526L,
                    density = "72x72"))
+
+  })
+})
+
+use_cassette("bi_image_bitonal", {
+  test_that("bi_image() works with bitonal colors", {
     ## Bitonal
     eiffel_tower = bi_image(
       identifier = "ark:/12148/btv1b9055204k/f1",
@@ -204,4 +227,4 @@ use_cassette("bi_image", {
                    density = "72x72"))
 
   })
-}, preserve_exact_body_bytes = TRUE)
+})
