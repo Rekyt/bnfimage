@@ -38,7 +38,7 @@ To get the full image you can use the argument `region` with the value `"full"`:
 
 
 ```r
-bi_image("ark:/12148/bpt6k10411495/f11", region = "full")
+bi_image("ark:/12148/bpt6k10411495/f11", region = "full", size = c(150, 150))
 ```
 
 ![plot of chunk bi-image-region-full](figure/bi-image-region-full-1.png)
@@ -47,7 +47,8 @@ Otherwise if you wan to crop a specific region in the image you can define it as
 
 
 ```r
-bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650))
+bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
+         size = c(160, 165))
 ```
 
 ![plot of chunk bi-image-region-crop](figure/bi-image-region-crop-1.png)
@@ -57,7 +58,7 @@ package. `image_write()` can accept any image filetype:
 
 
 ```r
-img = bi_image("ark:/12148/bpt6k10411495/f11",
+img = bi_image("ark:/12148/bpt6k10411495/f11", size = c(160, 165),
                region = c(1250, 1300, 1600, 1650))
 
 magick::image_write(img, "./my_image.png")
@@ -77,26 +78,26 @@ several_ids = c("ark:/12148/bpt6k10411495/f11", "ark:/12148/bpt6k10411495/f13",
                 "ark:/12148/bpt6k10411495/f15")
 
 several_imgs = lapply(several_ids, bi_image, region = "full",
-                      size = c(200, 500))
+                      size = c(200, 200))
 
 several_imgs
 #> [[1]]
 #> # A tibble: 1 x 7
 #>   format width height colorspace matte filesize density
 #>   <chr>  <int>  <int> <chr>      <lgl>    <int> <chr>  
-#> 1 JPEG     200    500 sRGB       FALSE    13015 400x400
+#> 1 JPEG     200    200 sRGB       FALSE     6432 400x400
 #> 
 #> [[2]]
 #> # A tibble: 1 x 7
 #>   format width height colorspace matte filesize density
 #>   <chr>  <int>  <int> <chr>      <lgl>    <int> <chr>  
-#> 1 JPEG     200    500 sRGB       FALSE    10990 400x400
+#> 1 JPEG     200    200 sRGB       FALSE     4926 400x400
 #> 
 #> [[3]]
 #> # A tibble: 1 x 7
 #>   format width height colorspace matte filesize density
 #>   <chr>  <int>  <int> <chr>      <lgl>    <int> <chr>  
-#> 1 JPEG     200    500 sRGB       FALSE    11759 400x400
+#> 1 JPEG     200    200 sRGB       FALSE     6086 400x400
 ```
 
 ## Accessing Metadata - `bi_metadata()`
@@ -200,7 +201,8 @@ associated metadata in a third one:
 
 
 ```r
-bi_all_data(c("ark:/12148/bpt6k10411495/f11", "ark:/12148/bpt6k10411495/f12"))
+bi_all_data(c("ark:/12148/bpt6k10411495/f11", "ark:/12148/bpt6k10411495/f12"),
+            size = c(200, 200))
 #> # A tibble: 2 x 3
 #>   identifier                   image      metadata         
 #>   <chr>                        <list>     <list>           
