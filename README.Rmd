@@ -16,7 +16,11 @@ knitr::opts_chunk$set(
 # `bnfimage` – API client to BnF images
 
 <!-- badges: start -->
-[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) [![Travis build status](https://travis-ci.org/Rekyt/bnfimage.svg?branch=master)](https://travis-ci.org/Rekyt/bnfimage) [![codecov](https://codecov.io/gh/Rekyt/bnfimage/branch/master/graph/badge.svg)](https://codecov.io/gh/Rekyt/bnfimage) [![CRAN-version]( https://www.r-pkg.org/badges/version/bnfimage)](https://cran.r-project.org/package=bnfimage)
+[![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#maturing)
+[![R-CMD-check](https://github.com/Rekyt/bnfimage/workflows/R-CMD-check/badge.svg)](https://github.com/Rekyt/bnfimage/actions)
+[![codecov](https://codecov.io/gh/Rekyt/bnfimage/branch/master/graph/badge.svg)](https://codecov.io/gh/Rekyt/bnfimage)
+[![CRAN-version](https://www.r-pkg.org/badges/version/bnfimage)](https://cran.r-project.org/package=bnfimage)
+<!-- badges: end -->
 
 `bnfimage` is an R client for the [BnF images API](http://api.bnf.fr/api-iiif-de-recuperation-des-images-de-gallica).
 The Bibliothèque Nationale de France (BnF), has a online repository called [Gallica](https://gallica.bnf.fr/) contaning millions of documents that are scanned. The BnF now offers an API to access all the images programmatically, and this package allows you to access it through R.

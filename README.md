@@ -5,13 +5,12 @@
 
 <!-- badges: start -->
 
-[![Project Status: WIP – Initial development is in progress, but there
-has not yet been a stable, usable release suitable for the
-public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
-[![Travis build
-status](https://travis-ci.org/Rekyt/bnfimage.svg?branch=master)](https://travis-ci.org/Rekyt/bnfimage)
+[![Lifecycle:
+maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#maturing)
+[![R-CMD-check](https://github.com/Rekyt/bnfimage/workflows/R-CMD-check/badge.svg)](https://github.com/Rekyt/bnfimage/actions)
 [![codecov](https://codecov.io/gh/Rekyt/bnfimage/branch/master/graph/badge.svg)](https://codecov.io/gh/Rekyt/bnfimage)
 [![CRAN-version](https://www.r-pkg.org/badges/version/bnfimage)](https://cran.r-project.org/package=bnfimage)
+<!-- badges: end -->
 
 `bnfimage` is an R client for the [BnF images
 API](http://api.bnf.fr/api-iiif-de-recuperation-des-images-de-gallica).
@@ -47,6 +46,19 @@ eiffel_tower = bi_image(
   rotation   = 0,
   quality    = "native",
   format     = "png")
+#> Called from: bi_image(identifier = "ark:/12148/btv1b9055204k/f1", region = "full", 
+#>     size = c(1500, 750), rotation = 0, quality = "native", format = "png")
+#> debug: bi_query = bi_GET(identifier, region, size, rotation, paste0(quality, 
+#>     ".", format))
+#> debug: if (bi_query$status_code == 503) {
+#>     stop("The API could not be reached, please try again later")
+#> } else if (bi_query$status_code == 500) {
+#>     stop("The query gave no answer. Please try another query")
+#> }
+#> debug: if (bi_query$status_code == 500) {
+#>     stop("The query gave no answer. Please try another query")
+#> }
+#> debug: magick::image_read(bi_query$content)
 
 str(eiffel_tower)
 #> Class 'magick-image' <externalptr>
@@ -101,6 +113,18 @@ You can query both data and associated metadata using the
 
 ``` r
 bi_all_data("ark:/12148/btv1b9055204k/f1", size = c(15, 7))
+#> Called from: bi_image(single_id, region, size, rotation, quality, format)
+#> debug: bi_query = bi_GET(identifier, region, size, rotation, paste0(quality, 
+#>     ".", format))
+#> debug: if (bi_query$status_code == 503) {
+#>     stop("The API could not be reached, please try again later")
+#> } else if (bi_query$status_code == 500) {
+#>     stop("The query gave no answer. Please try another query")
+#> }
+#> debug: if (bi_query$status_code == 500) {
+#>     stop("The query gave no answer. Please try another query")
+#> }
+#> debug: magick::image_read(bi_query$content)
 #> # A tibble: 1 x 3
 #>   identifier                  image      metadata         
 #>   <chr>                       <list>     <list>           
@@ -112,6 +136,30 @@ You can also provide several identifiers to `bi_all_data()`:
 ``` r
 bi_all_data(c("ark:/12148/btv1b9055204k/f1",
               "ark:/12148/btv1b90055455/f1"))
+#> Called from: bi_image(single_id, region, size, rotation, quality, format)
+#> debug: bi_query = bi_GET(identifier, region, size, rotation, paste0(quality, 
+#>     ".", format))
+#> debug: if (bi_query$status_code == 503) {
+#>     stop("The API could not be reached, please try again later")
+#> } else if (bi_query$status_code == 500) {
+#>     stop("The query gave no answer. Please try another query")
+#> }
+#> debug: if (bi_query$status_code == 500) {
+#>     stop("The query gave no answer. Please try another query")
+#> }
+#> debug: magick::image_read(bi_query$content)
+#> Called from: bi_image(single_id, region, size, rotation, quality, format)
+#> debug: bi_query = bi_GET(identifier, region, size, rotation, paste0(quality, 
+#>     ".", format))
+#> debug: if (bi_query$status_code == 503) {
+#>     stop("The API could not be reached, please try again later")
+#> } else if (bi_query$status_code == 500) {
+#>     stop("The query gave no answer. Please try another query")
+#> }
+#> debug: if (bi_query$status_code == 500) {
+#>     stop("The query gave no answer. Please try another query")
+#> }
+#> debug: magick::image_read(bi_query$content)
 #> # A tibble: 2 x 3
 #>   identifier                  image      metadata         
 #>   <chr>                       <list>     <list>           
