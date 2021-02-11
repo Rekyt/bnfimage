@@ -10,7 +10,7 @@ bibentry(
 )
 
 bibentry(
-  entry    = "misc",
+  bibtype    = "misc",
   header   = "For commercial reuse refer to the BnF website and licensing policy:",
   author   = "BnF",
   year     = data_year,
