@@ -2,7 +2,7 @@ data_year <- format(Sys.Date(), "%Y")
 citHeader("To cite bnfimage in publications use:")
 
 bibentry(
-  entry    = "misc",
+  bibtype  = "misc",
   header   = "Please cite the data provider even for non-commercial reuse:",
   author   = '"Source gallica.bnf.fr / Bibliothèque nationale de France" or "Source gallica.bnf.fr / BnF"',
   year     = data_year,

@@ -15,10 +15,9 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lif
 `bnfimage` is an R client for the [BnF images
 API](http://api.bnf.fr/api-iiif-de-recuperation-des-images-de-gallica).
 The Bibliothèque Nationale de France (BnF), has a online repository
-called [Gallica](https://gallica.bnf.fr/) contaning millions of
-documents that are scanned. The BnF now offers an API to access all the
-images programmatically, and this package allows you to access it
-through R.
+called [Gallica](https://gallica.bnf.fr/) containing millions of scanned
+documents. The BnF offers an API to access all the images
+programmatically, `bnfimage` lets you access it through R.
 
 The BnF Image API is implemented following the [International Image
 Interoperability Framework](https://iiif.io/) (IIIF) with Image API
@@ -33,7 +32,7 @@ You can install the development version of bnfimage with:
 remotes::install_github("Rekyt/bnfimage")
 ```
 
-## : Example
+## :memo: Example
 
 You can extract images with the `bi_image()` function:
 
