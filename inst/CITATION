@@ -1,0 +1,18 @@
+data_year <- format(Sys.Date(), "%Y")
+citHeader("To cite bnfimage in publications use:")
+
+bibentry(
+  entry    = "misc",
+  header   = "Please cite the data provider even for non-commercial reuse:",
+  author   = '"Source gallica.bnf.fr / Bibliothèque nationale de France" or "Source gallica.bnf.fr / BnF"',
+  year     = data_year,
+  url      = "https://gallica.bnf.fr/"
+)
+
+bibentry(
+  entry    = "misc",
+  header   = "For commercial reuse refer to the BnF website and licensing policy:",
+  author   = "BnF",
+  year     = data_year,
+  url      = "https://gallica.bnf.fr/edit/und/conditions-dutilisation-des-contenus-de-gallica"
+)

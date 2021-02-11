@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# `bnfimage` – API client to BnF images
+# :package: `bnfimage` – API client to BnF images
 
 <!-- badges: start -->
 
@@ -25,7 +25,7 @@ Interoperability Framework](https://iiif.io/) (IIIF) with Image API
 implemented using v.1.1, the Presentation API implemented using v.2.0,
 and the Search API not yet implemented.
 
-## Installation
+## :wrench: Installation
 
 You can install the development version of bnfimage with:
 
@@ -33,7 +33,7 @@ You can install the development version of bnfimage with:
 remotes::install_github("Rekyt/bnfimage")
 ```
 
-## Example
+## : Example
 
 You can extract images with the `bi_image()` function:
 
@@ -167,12 +167,23 @@ bi_all_data(c("ark:/12148/btv1b9055204k/f1",
 #> 2 ark:/12148/btv1b90055455/f1 <magck-mg> <named list [13]>
 ```
 
-## Related projects
+## :page\_facing\_up: Data license
+
+Note that the images from Gallica have [a specific
+license](https://gallica.bnf.fr/edit/und/conditions-dutilisation-des-contenus-de-gallica)
+so make sure to check the license of the images you plan to reuse. As a
+general rule, non-commercial reuse is free of charge but the source
+should be speficied as “Source gallica.bnf.fr / Bibliothèque nationale
+de France” or “Source gallica.bnf.fr / BnF”. Commercial reuse should be
+license specifically following the [price
+list](https://www.bnf.fr/fr/faire-une-utilisation-commerciale-dune-reproduction).
+
+## :information\_source: Related projects
 
 [`gargallica`](GuillaumePressiat/gargallica) is a collection of script
 and functions to retrieve data from the regular Gallica API.
 
-## Code of Conduct
+## :speech\_balloon: Code of Conduct
 
 Please note that the `bnfimage` project is released with a [Contributor
 Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project,
