@@ -50,6 +50,8 @@ test_that("bi_all_data() fails for all bad arguments to bi_image()", {
 
 test_that("bi_all_data() works for a single image", {
 
+  skip_on_os("windows")
+
   vcr::use_cassette("bi_all_data_single_image", {
     expect_silent(eiffel_tower <- bi_all_data(
       identifier = "ark:/12148/btv1b9055204k/f1",
@@ -91,6 +93,9 @@ test_that("bi_all_data() works for a single image", {
 })
 
 test_that("bi_all_data() works for several images", {
+
+  skip_on_os("windows")
+
   vcr::use_cassette("bi_all_data_several_images", {
     expect_silent(eiffel_tower <- bi_all_data(
       identifier = c("ark:/12148/btv1b9055204k/f1",
