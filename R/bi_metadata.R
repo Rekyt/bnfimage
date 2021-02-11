@@ -9,7 +9,7 @@ bi_metadata = function(identifier = NULL) {
 
   bi_check_identifier(identifier)
 
-  bi_query = bi_GET(identifier, "manifest.json")
+  bi_query = bi_GET_lim(identifier, "manifest.json")
 
   bi_content = httr::content(bi_query, encoding = "UTF-8")
 

@@ -63,8 +63,8 @@ bi_image = function(identifier = NULL, region = c(0L, 0L, 500L, 500L),
   quality = match.arg(quality)
   format = match.arg(format)
 
-  bi_query = bi_GET(identifier, region, size, rotation,
-                    paste0(quality, ".", format))
+  bi_query = bi_GET_lim(identifier, region, size, rotation,
+                        paste0(quality, ".", format))
 
 
   if (bi_query$status_code == 503) {
