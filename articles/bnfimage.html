@@ -87,23 +87,23 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rekyt.github.io/bnfimage">bnfimage</a></span><span class="op">)</span></code></pre></div>
 <p>The BnF Gallica image library contains thousands of freely accessible images of historical interests. It provides an Application Programming Interface to access it (<a href="https://api.bnf.fr/api-iiif-de-recuperation-des-images-de-gallica#scroll-nav__1">see their documentation</a>). The access is possible through the <a href="https://iiif.io/">IIIF</a> API. The goal of <code>bnfimage</code> is to let you access this API directly from R.</p>
-<div id="accessing-images---bi_image" class="section level2">
-<h2 class="hasAnchor">
-<a href="#accessing-images---bi_image" class="anchor"></a>Accessing Images - <code>bi_image()</code>
-</h2>
+<div id="get-images---bi_image" class="section level1">
+<h1 class="hasAnchor">
+<a href="#get-images---bi_image" class="anchor"></a>Get Image(s) - <code>bi_image()</code>
+</h1>
 <p>To get a specific image, you first need to get its identifier from Gallica. The identifier is a string that begins with <code>ark:/</code>. It is accessible from browsing <a href="https://gallica.bnf.fr">Gallica</a> as the URL of the object such as: <code>https://gallica.bnf.fr/ark:/12148/bpt6k10411495/f11.item#</code> giving the id <code>ark:/12148/bpt6k10411495/f11</code>.</p>
-<div id="single-image" class="section level3">
-<h3 class="hasAnchor">
-<a href="#single-image" class="anchor"></a>Single Image</h3>
+<div id="single-image" class="section level2">
+<h2 class="hasAnchor">
+<a href="#single-image" class="anchor"></a>Single Image</h2>
 <p>To download a single image you can use the <code><a href="../reference/bi_image.html">bi_image()</a></code> with the identifier of the object:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/bi_image.html">bi_image</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="bi-image-1.png" alt=""><p class="caption">plot of chunk bi-image</p>
 </div>
-<div id="image-crop" class="section level4">
-<h4 class="hasAnchor">
-<a href="#image-crop" class="anchor"></a>Image Crop</h4>
+<div id="image-crop" class="section level3">
+<h3 class="hasAnchor">
+<a href="#image-crop" class="anchor"></a>Image Crop</h3>
 <p>This displays a small portion of the image as by default this functions only returns the top left corner of the image from 0 to 500px in both directions.</p>
 <p>To get the full image you can use the argument <code>region</code> with the value <code>"full"</code>:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
@@ -119,9 +119,9 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <img src="bi-image-region-crop-1.png" alt=""><p class="caption">plot of chunk bi-image-region-crop</p>
 </div>
 </div>
-<div id="image-size" class="section level4">
-<h4 class="hasAnchor">
-<a href="#image-size" class="anchor"></a>Image size</h4>
+<div id="image-size" class="section level3">
+<h3 class="hasAnchor">
+<a href="#image-size" class="anchor"></a>Image size</h3>
 <p>As you noticed previous commands specified a <code>size</code> argument. It corresponds to the size of the extracted image. It can be equal to <code>"full"</code> so that the extracted region is returned without being scaled.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/bi_image.html">bi_image</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1250</span>, <span class="fl">1300</span>, <span class="fl">1600</span>, <span class="fl">1650</span><span class="op">)</span>,
@@ -138,9 +138,9 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 </div>
 <p>Other options exist in the <a href="https://iiif.io/api/image/1.1/#4-2-size">IIIF Image API</a> but are not yet implemented in <code>bnfimage</code>.</p>
 </div>
-<div id="rotation" class="section level4">
-<h4 class="hasAnchor">
-<a href="#rotation" class="anchor"></a>Rotation</h4>
+<div id="rotation" class="section level3">
+<h3 class="hasAnchor">
+<a href="#rotation" class="anchor"></a>Rotation</h3>
 <p><code>bnfimage</code> supports a <code>rotation</code> argument that returns a rotated image. By default the returned image is not rotated (<code>rotation = 0</code>). The argument is the clockwise rotation angle in degrees. When the rotation angle is not a multiple of 90° then the background color used is white.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># No rotation</span>
@@ -169,9 +169,9 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <img src="bi-image-region-crop-rotation-3.png" alt=""><p class="caption">plot of chunk bi-image-region-crop-rotation</p>
 </div>
 </div>
-<div id="color" class="section level4">
-<h4 class="hasAnchor">
-<a href="#color" class="anchor"></a>Color</h4>
+<div id="color" class="section level3">
+<h3 class="hasAnchor">
+<a href="#color" class="anchor"></a>Color</h3>
 <p>To lower bandwidth it is possible to directly ask for transformed bit-depth of the returned image through the <code>quality</code> argument. It can take four values:</p>
 <ol style="list-style-type: decimal">
 <li>
@@ -219,9 +219,9 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <img src="bi-image-quality-4.png" alt=""><p class="caption">plot of chunk bi-image-quality</p>
 </div>
 </div>
-<div id="format" class="section level4">
-<h4 class="hasAnchor">
-<a href="#format" class="anchor"></a>Format</h4>
+<div id="format" class="section level3">
+<h3 class="hasAnchor">
+<a href="#format" class="anchor"></a>Format</h3>
 <p>The images can be returned as different files format. This can be changed through the <code>format</code> argument which can take all these values:</p>
 <ul>
 <li>
@@ -253,9 +253,9 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <img src="bi-image-format-2.png" alt=""><p class="caption">plot of chunk bi-image-format</p>
 </div>
 </div>
-<div id="saving-the-image" class="section level4">
-<h4 class="hasAnchor">
-<a href="#saving-the-image" class="anchor"></a>Saving the image</h4>
+<div id="saving-the-image" class="section level3">
+<h3 class="hasAnchor">
+<a href="#saving-the-image" class="anchor"></a>Saving the image</h3>
 <p>To save the images you can use the function <code>image_write()</code> in the <code>magick</code> package. <code>image_write()</code> can accept any image filetype:</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">img</span> <span class="op">=</span> <span class="fu"><a href="../reference/bi_image.html">bi_image</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">160</span>, <span class="fl">165</span><span class="op">)</span>,
@@ -265,9 +265,9 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <p>The second argument specifies the file path. Refer to the help of the function through <code><a href="https://docs.ropensci.org/magick/reference/editing.html">?magick::image_write</a></code> to get an overview of all the arguments and uses.</p>
 </div>
 </div>
-<div id="multiple-images" class="section level3">
-<h3 class="hasAnchor">
-<a href="#multiple-images" class="anchor"></a>Multiple Images</h3>
+<div id="multiple-images" class="section level2">
+<h2 class="hasAnchor">
+<a href="#multiple-images" class="anchor"></a>Multiple Images</h2>
 <p>To access several images you can use a list of identifier and wrap calls to <code><a href="../reference/bi_image.html">bi_image()</a></code> using <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code>:</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">several_ids</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, <span class="st">"ark:/12148/bpt6k10411495/f13"</span>,
@@ -294,16 +294,17 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <span class="co">#&gt;   format width height colorspace matte filesize density</span>
 <span class="co">#&gt;   &lt;chr&gt;  &lt;int&gt;  &lt;int&gt; &lt;chr&gt;      &lt;lgl&gt;    &lt;int&gt; &lt;chr&gt;  </span>
 <span class="co">#&gt; 1 JPEG     200    200 sRGB       FALSE     6086 400x400</span></code></pre></div>
+<p>The arguments can be specified similarly to single calls to <code><a href="../reference/bi_image.html">bi_image()</a></code>.</p>
 </div>
 </div>
-<div id="accessing-metadata---bi_metadata" class="section level2">
-<h2 class="hasAnchor">
-<a href="#accessing-metadata---bi_metadata" class="anchor"></a>Accessing Metadata - <code>bi_metadata()</code>
-</h2>
+<div id="get-images-metadata---bi_metadata" class="section level1">
+<h1 class="hasAnchor">
+<a href="#get-images-metadata---bi_metadata" class="anchor"></a>Get Image(s) Metadata - <code>bi_metadata()</code>
+</h1>
 <p>One interest of the BnF image library is the richness of the metadata associated with an image. For the moment bnfimage only converts metadata to a giant list to make it accessible.</p>
-<div id="single-image-1" class="section level3">
-<h3 class="hasAnchor">
-<a href="#single-image-1" class="anchor"></a>Single Image</h3>
+<div id="single-image-1" class="section level2">
+<h2 class="hasAnchor">
+<a href="#single-image-1" class="anchor"></a>Single Image</h2>
 <p>Using a single image identifier you can retrieve the metadata of an image through the function <code><a href="../reference/bi_metadata.html">bi_metadata()</a></code>. The first argument is the identifier of the image as for <code><a href="../reference/bi_image.html">bi_image()</a></code>:</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">met</span> <span class="op">=</span> <span class="fu"><a href="../reference/bi_metadata.html">bi_metadata</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span><span class="op">)</span>
@@ -325,9 +326,9 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <span class="co">#&gt;  $ @context   : chr "http://iiif.io/api/presentation/2/context.json"</span></code></pre></div>
 <p>The metadata contains much information on the actual image as well as its context.</p>
 </div>
-<div id="multiple-images-1" class="section level3">
-<h3 class="hasAnchor">
-<a href="#multiple-images-1" class="anchor"></a>Multiple Images</h3>
+<div id="multiple-images-1" class="section level2">
+<h2 class="hasAnchor">
+<a href="#multiple-images-1" class="anchor"></a>Multiple Images</h2>
 <p>Similarly as for <code><a href="../reference/bi_image.html">bi_image()</a></code> to access the metadata of several images you can wrap the calls to <code><a href="../reference/bi_metadata.html">bi_metadata()</a></code> through a list of identifiers using <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code>:</p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">several_met</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">several_ids</span>, <span class="va">bi_metadata</span><span class="op">)</span>
@@ -378,10 +379,10 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <span class="co">#&gt;   ..$ @context   : chr "http://iiif.io/api/presentation/2/context.json"</span></code></pre></div>
 </div>
 </div>
-<div id="accessing-both-images-and-metadata---bi_all_data" class="section level2">
-<h2 class="hasAnchor">
-<a href="#accessing-both-images-and-metadata---bi_all_data" class="anchor"></a>Accessing Both Images and Metadata - <code>bi_all_data()</code>
-</h2>
+<div id="get-both-images-and-metadata---bi_all_data" class="section level1">
+<h1 class="hasAnchor">
+<a href="#get-both-images-and-metadata---bi_all_data" class="anchor"></a>Get Both Images and Metadata - <code>bi_all_data()</code>
+</h1>
 <p>The <code><a href="../reference/bi_all_data.html">bi_all_data()</a></code> function can be used to quickly retrieve both the images as well as the associated metadata of one or several images. The outputs stores the identifier of an image in a column, the actual image in a second one, and the associated metadata in a third one:</p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/bi_all_data.html">bi_all_data</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, <span class="st">"ark:/12148/bpt6k10411495/f12"</span><span class="op">)</span>,
@@ -391,6 +392,11 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <span class="co">#&gt;   &lt;chr&gt;                        &lt;list&gt;     &lt;list&gt;           </span>
 <span class="co">#&gt; 1 ark:/12148/bpt6k10411495/f11 &lt;magck-mg&gt; &lt;named list [13]&gt;</span>
 <span class="co">#&gt; 2 ark:/12148/bpt6k10411495/f12 &lt;magck-mg&gt; &lt;named list [13]&gt;</span></code></pre></div>
+</div>
+<div id="rate-limitation" class="section level1">
+<h1 class="hasAnchor">
+<a href="#rate-limitation" class="anchor"></a>Rate Limitation</h1>
+<p>By default <code>bnfimage</code> implements rate limitation through the <a href="https://cran.r-project.org/package=ratelimitr"><code>ratelimitr</code> package</a>. The query are limited to a maximum of 1 every 3 seconds to avoid being blocked by the BnF server. This is the limit at which the BnF server considers the queries to be malicious. For the moment this limitation cannot be lifted.</p>
 </div>
   </div>
 
