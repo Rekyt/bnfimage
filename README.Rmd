@@ -77,7 +77,7 @@ bi_all_data(c("ark:/12148/btv1b9055204k/f1",
 
 ## :boom: Rate limitation
 
-```{r rate-limitation-chunk, child = "man/rmdchunks/_fundiversity_functions.Rmd"}
+```{r rate-limitation-chunk, child = "man/rmdchunks/_rate_limitation.Rmd"}
 ```
 
 ## :page_facing_up: Data license
