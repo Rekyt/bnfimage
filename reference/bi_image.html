@@ -181,6 +181,14 @@ to the final image (<code>0</code> for no rotation)</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>a matrix of the image</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>By default <code>bnfimage</code> implements rate limitation through the
+<a href='https://cran.r-project.org/package=ratelimitr'><code>ratelimitr</code> package</a>.
+The query are limited to a maximum of 1 every 3 seconds to avoid being
+blocked by the BnF server. This is the limit at which the BnF server
+considers the queries to be malicious. For the moment this limitation
+cannot be lifted.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
