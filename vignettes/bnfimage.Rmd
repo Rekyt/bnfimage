@@ -7,6 +7,11 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+<!--
+# Pre-render with
+knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
+-->
+
 
 
 
@@ -30,7 +35,10 @@ To download a single image you can use the `bi_image()` with the identifier of t
 bi_image("ark:/12148/bpt6k10411495/f11")
 ```
 
-![plot of chunk bi-image](figure/bi-image-1.png)
+![plot of chunk bi-image](./bi-image-1.png)
+
+
+#### Image Crop
 
 This displays a small portion of the image as by default this functions only returns the top left corner of the image from 0 to 500px in both directions.
 
@@ -41,9 +49,9 @@ To get the full image you can use the argument `region` with the value `"full"`:
 bi_image("ark:/12148/bpt6k10411495/f11", region = "full", size = c(150, 150))
 ```
 
-![plot of chunk bi-image-region-full](figure/bi-image-region-full-1.png)
+![plot of chunk bi-image-region-full](./bi-image-region-full-1.png)
 
-Otherwise if you wan to crop a specific region in the image you can define it as length 4 numeric vector specifiying the coordinates of the top left most point and the bottom right point. For example if you want to extract the image from 1250px x and 1300px y to 1600px x and 1650px y you would call:
+Otherwise if you want to crop a specific region in the image you can define it as length 4 numeric vector specifiying the coordinates of the top left most point and the bottom right point. For example if you want to extract the image from 1250px x and 1300px y to 1600px x and 1650px y you would call:
 
 
 ```r
@@ -51,7 +59,158 @@ bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
          size = c(160, 165))
 ```
 
-![plot of chunk bi-image-region-crop](figure/bi-image-region-crop-1.png)
+![plot of chunk bi-image-region-crop](./bi-image-region-crop-1.png)
+
+
+#### Image size
+
+As you noticed previous commands specified a `size` argument.
+It corresponds to the size of the extracted image. It can be equal to `"full"` so
+that the extracted region is returned without being scaled.
+
+
+
+```r
+bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
+         size = "full")
+```
+
+![plot of chunk bi-image-size-full](./bi-image-size-full-1.png)
+
+It can also be a numeric vector of lenth 2 that gives the size at which the extracted region should be scaled:
+
+
+
+```r
+bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
+         size = c(25, 70))
+```
+
+![plot of chunk bi-image-size-small](./bi-image-size-small-1.png)
+
+Other options exist in the [IIIF Image API](https://iiif.io/api/image/1.1/#4-2-size) but are not yet implemented in `bnfimage`.
+
+
+#### Rotation
+
+`bnfimage` supports a `rotation` argument that returns a rotated image. By default the returned image is not rotated (`rotation = 0`). The argument is the clockwise rotation angle in degrees. When the rotation angle is not a multiple of 90° then the background color used is white.
+
+
+
+```r
+# No rotation
+bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
+         size = c(80, 82),
+         rotation = 0)
+```
+
+![plot of chunk bi-image-region-crop-rotation](./bi-image-region-crop-rotation-1.png)
+
+```r
+
+# 90° clockwise rotation
+bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
+         size = c(80, 82),
+         rotation = 90)
+```
+
+![plot of chunk bi-image-region-crop-rotation](./bi-image-region-crop-rotation-2.png)
+
+```r
+
+# Non-multiple of 90° rotation
+bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
+         size = c(80, 82),
+         rotation = 153)
+```
+
+![plot of chunk bi-image-region-crop-rotation](./bi-image-region-crop-rotation-3.png)
+
+
+#### Color
+
+To lower bandwidth it is possible to directly ask for transformed bit-depth of the returned image through the `quality` argument.
+It can take four values:
+
+1. `"native"` which returns the image as stored in the BnF database,
+1. `"color"` with the image in full color using 24 bits per pixel,
+1. `"grey"` with the image in greyscale using 8 bits per pixel,
+1. `"bitonal"` where is pixel is either black or white using 1 bit per pixel.
+
+
+
+
+```r
+# Native
+bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
+         size = c(160, 165),
+         quality = "native")
+```
+
+![plot of chunk bi-image-quality](./bi-image-quality-1.png)
+
+```r
+
+# Color
+bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
+         size = c(160, 165),
+         quality = "color")
+```
+
+![plot of chunk bi-image-quality](./bi-image-quality-2.png)
+
+```r
+
+# Grey
+bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
+         size = c(160, 165),
+         quality = "gray")
+```
+
+![plot of chunk bi-image-quality](./bi-image-quality-3.png)
+
+```r
+
+# Bitonal
+bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
+         size = c(160, 165),
+         quality = "bitonal")
+```
+
+![plot of chunk bi-image-quality](./bi-image-quality-4.png)
+
+
+#### Format
+
+The images can be returned as different files format. This can be changed through the `format` argument which can take all these values:
+
+* `"jpg"` JPEG format (which is used by default),
+* `"gif"` GIF format,
+* `"png"` PNG,
+* `"jp2"` JP2,
+* `"pdf"` PDF,
+* `"tif"` TIFF.
+
+
+```r
+# JPG image
+bi_image("ark:/12148/bpt6k10411495/f11", region = "full", size = c(75, 75),
+         format = "jpg")
+```
+
+![plot of chunk bi-image-format](./bi-image-format-1.png)
+
+```r
+
+# PDF image
+bi_image("ark:/12148/bpt6k10411495/f11", region = "full", size = c(75, 75),
+         format = "pdf")
+```
+
+![plot of chunk bi-image-format](./bi-image-format-2.png)
+
+
+#### Saving the image
 
 To save the images you can use the function `image_write()` in the `magick`
 package. `image_write()` can accept any image filetype:
@@ -66,6 +225,7 @@ magick::image_write(img, "./my_image.png")
 
 The second argument specifies the file path. Refer to the help of the function
 through `?magick::image_write` to get an overview of all the arguments and uses.
+
 
 ### Multiple Images
 
