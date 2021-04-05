@@ -21,12 +21,12 @@ library(bnfimage)
 
 The BnF Gallica image library contains thousands of freely accessible images of historical interests. It provides an Application Programming Interface to access it ([see their documentation](https://api.bnf.fr/api-iiif-de-recuperation-des-images-de-gallica#scroll-nav__1)). The access is possible through the [IIIF](https://iiif.io/) API. The goal of `bnfimage` is to let you access this API directly from R.
 
-## Accessing Images - `bi_image()`
+# Get Image(s) - `bi_image()`
 
 To get a specific image, you first need to get its identifier from Gallica.
 The identifier is a string that begins with `ark:/`. It is accessible from browsing [Gallica](https://gallica.bnf.fr) as the URL of the object such as: `https://gallica.bnf.fr/ark:/12148/bpt6k10411495/f11.item#` giving the id `ark:/12148/bpt6k10411495/f11`.
 
-### Single Image
+## Single Image
 
 To download a single image you can use the `bi_image()` with the identifier of the object:
 
@@ -38,7 +38,7 @@ bi_image("ark:/12148/bpt6k10411495/f11")
 ![plot of chunk bi-image](./bi-image-1.png)
 
 
-#### Image Crop
+### Image Crop
 
 This displays a small portion of the image as by default this functions only returns the top left corner of the image from 0 to 500px in both directions.
 
@@ -62,7 +62,7 @@ bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
 ![plot of chunk bi-image-region-crop](./bi-image-region-crop-1.png)
 
 
-#### Image size
+### Image size
 
 As you noticed previous commands specified a `size` argument.
 It corresponds to the size of the extracted image. It can be equal to `"full"` so
@@ -91,7 +91,7 @@ bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
 Other options exist in the [IIIF Image API](https://iiif.io/api/image/1.1/#4-2-size) but are not yet implemented in `bnfimage`.
 
 
-#### Rotation
+### Rotation
 
 `bnfimage` supports a `rotation` argument that returns a rotated image. By default the returned image is not rotated (`rotation = 0`). The argument is the clockwise rotation angle in degrees. When the rotation angle is not a multiple of 90° then the background color used is white.
 
@@ -127,7 +127,7 @@ bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
 ![plot of chunk bi-image-region-crop-rotation](./bi-image-region-crop-rotation-3.png)
 
 
-#### Color
+### Color
 
 To lower bandwidth it is possible to directly ask for transformed bit-depth of the returned image through the `quality` argument.
 It can take four values:
@@ -180,7 +180,7 @@ bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
 ![plot of chunk bi-image-quality](./bi-image-quality-4.png)
 
 
-#### Format
+### Format
 
 The images can be returned as different files format. This can be changed through the `format` argument which can take all these values:
 
@@ -210,7 +210,7 @@ bi_image("ark:/12148/bpt6k10411495/f11", region = "full", size = c(75, 75),
 ![plot of chunk bi-image-format](./bi-image-format-2.png)
 
 
-#### Saving the image
+### Saving the image
 
 To save the images you can use the function `image_write()` in the `magick`
 package. `image_write()` can accept any image filetype:
@@ -227,7 +227,7 @@ The second argument specifies the file path. Refer to the help of the function
 through `?magick::image_write` to get an overview of all the arguments and uses.
 
 
-### Multiple Images
+## Multiple Images
 
 To access several images you can use a list of identifier and wrap calls
 to `bi_image()` using `lapply()`:
@@ -260,13 +260,15 @@ several_imgs
 #> 1 JPEG     200    200 sRGB       FALSE     6086 400x400
 ```
 
-## Accessing Metadata - `bi_metadata()`
+The arguments can be specified similarly to single calls to `bi_image()`.
+
+# Get Image(s) Metadata - `bi_metadata()`
 
 One interest of the BnF image library is the richness of the metadata associated
 with an image. For the moment bnfimage only converts metadata to a giant list
 to make it accessible.
 
-### Single Image
+## Single Image
 
 Using a single image identifier you can retrieve the metadata of an image
 through the function `bi_metadata()`. The first argument is the identifier of
@@ -296,7 +298,7 @@ str(met, max.level = 1)
 The metadata contains much information on the actual image as well as its
 context.
 
-### Multiple Images
+## Multiple Images
 
 Similarly as for `bi_image()` to access the metadata of several images you can
 wrap the calls to `bi_metadata()` through a list of identifiers using
@@ -352,7 +354,8 @@ str(several_met, max.level = 2)
 #>   ..$ @context   : chr "http://iiif.io/api/presentation/2/context.json"
 ```
 
-## Accessing Both Images and Metadata - `bi_all_data()`
+
+# Get Both Images and Metadata - `bi_all_data()`
 
 The `bi_all_data()` function can be used to quickly retrieve both the images as
 well as the associated metadata of one or several images. The outputs stores the
@@ -369,3 +372,9 @@ bi_all_data(c("ark:/12148/bpt6k10411495/f11", "ark:/12148/bpt6k10411495/f12"),
 #> 1 ark:/12148/bpt6k10411495/f11 <magck-mg> <named list [13]>
 #> 2 ark:/12148/bpt6k10411495/f12 <magck-mg> <named list [13]>
 ```
+
+
+# Rate Limitation
+
+
+By default `bnfimage` implements rate limitation through the [`ratelimitr` package](https://cran.r-project.org/package=ratelimitr). The query are limited to a maximum of 1 every 3 seconds to avoid being blocked by the BnF server. This is the limit at which the BnF server considers the queries to be malicious. For the moment this limitation cannot be lifted.
