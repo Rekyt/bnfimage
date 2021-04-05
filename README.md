@@ -45,19 +45,6 @@ eiffel_tower = bi_image(
   rotation   = 0,
   quality    = "native",
   format     = "png")
-#> Called from: bi_image(identifier = "ark:/12148/btv1b9055204k/f1", region = "full", 
-#>     size = c(1500, 750), rotation = 0, quality = "native", format = "png")
-#> debug: bi_query = bi_GET(identifier, region, size, rotation, paste0(quality, 
-#>     ".", format))
-#> debug: if (bi_query$status_code == 503) {
-#>     stop("The API could not be reached, please try again later")
-#> } else if (bi_query$status_code == 500) {
-#>     stop("The query gave no answer. Please try another query")
-#> }
-#> debug: if (bi_query$status_code == 500) {
-#>     stop("The query gave no answer. Please try another query")
-#> }
-#> debug: magick::image_read(bi_query$content)
 
 str(eiffel_tower)
 #> Class 'magick-image' <externalptr>
@@ -112,18 +99,6 @@ You can query both data and associated metadata using the
 
 ``` r
 bi_all_data("ark:/12148/btv1b9055204k/f1", size = c(15, 7))
-#> Called from: bi_image(single_id, region, size, rotation, quality, format)
-#> debug: bi_query = bi_GET(identifier, region, size, rotation, paste0(quality, 
-#>     ".", format))
-#> debug: if (bi_query$status_code == 503) {
-#>     stop("The API could not be reached, please try again later")
-#> } else if (bi_query$status_code == 500) {
-#>     stop("The query gave no answer. Please try another query")
-#> }
-#> debug: if (bi_query$status_code == 500) {
-#>     stop("The query gave no answer. Please try another query")
-#> }
-#> debug: magick::image_read(bi_query$content)
 #> # A tibble: 1 x 3
 #>   identifier                  image      metadata         
 #>   <chr>                       <list>     <list>           
@@ -135,36 +110,21 @@ You can also provide several identifiers to `bi_all_data()`:
 ``` r
 bi_all_data(c("ark:/12148/btv1b9055204k/f1",
               "ark:/12148/btv1b90055455/f1"))
-#> Called from: bi_image(single_id, region, size, rotation, quality, format)
-#> debug: bi_query = bi_GET(identifier, region, size, rotation, paste0(quality, 
-#>     ".", format))
-#> debug: if (bi_query$status_code == 503) {
-#>     stop("The API could not be reached, please try again later")
-#> } else if (bi_query$status_code == 500) {
-#>     stop("The query gave no answer. Please try another query")
-#> }
-#> debug: if (bi_query$status_code == 500) {
-#>     stop("The query gave no answer. Please try another query")
-#> }
-#> debug: magick::image_read(bi_query$content)
-#> Called from: bi_image(single_id, region, size, rotation, quality, format)
-#> debug: bi_query = bi_GET(identifier, region, size, rotation, paste0(quality, 
-#>     ".", format))
-#> debug: if (bi_query$status_code == 503) {
-#>     stop("The API could not be reached, please try again later")
-#> } else if (bi_query$status_code == 500) {
-#>     stop("The query gave no answer. Please try another query")
-#> }
-#> debug: if (bi_query$status_code == 500) {
-#>     stop("The query gave no answer. Please try another query")
-#> }
-#> debug: magick::image_read(bi_query$content)
 #> # A tibble: 2 x 3
 #>   identifier                  image      metadata         
 #>   <chr>                       <list>     <list>           
 #> 1 ark:/12148/btv1b9055204k/f1 <magck-mg> <named list [13]>
 #> 2 ark:/12148/btv1b90055455/f1 <magck-mg> <named list [13]>
 ```
+
+## :boom: Rate limitation
+
+By default `bnfimage` implements rate limitation through the
+[`ratelimitr` package](https://cran.r-project.org/package=ratelimitr).
+The query are limited to a maximum of 1 every 3 seconds to avoid being
+blocked by the BnF server. This is the limit at which the BnF server
+considers the queries to be malicious. For the moment this limitation
+cannot be lifted.
 
 ## :page\_facing\_up: Data license
 
