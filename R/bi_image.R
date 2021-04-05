@@ -28,6 +28,8 @@
 #' * `"pdf"` for PDF image.
 #'
 #' @return a matrix of the image
+#'
+#' @includeRmd man/rmdchunks/_rate_limitation.Rmd
 #' @export
 bi_image = function(identifier = NULL, region = c(0L, 0L, 500L, 500L),
                     size = "full", rotation = 0,

@@ -75,6 +75,11 @@ bi_all_data(c("ark:/12148/btv1b9055204k/f1",
               "ark:/12148/btv1b90055455/f1"))
 ```
 
+## :boom: Rate limitation
+
+```{r child="../man/rmdchunks/_fundiversity_functions.Rmd"}
+```
+
 ## :page_facing_up: Data license
 
 Note that the images from Gallica have [a specific license](https://gallica.bnf.fr/edit/und/conditions-dutilisation-des-contenus-de-gallica) so make sure to check the license of the images you plan to reuse.

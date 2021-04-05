@@ -1,6 +1,7 @@
 #' Retrieve BnF image metadata
 #'
 #' @inheritParams bi_image
+#' @includeRmd man/rmdchunks/_rate_limitation.Rmd
 #' @export
 bi_metadata = function(identifier = NULL) {
   if (is.null(identifier)) {

@@ -54,3 +54,11 @@ a matrix of the image
 \description{
 Retrieve image from BNF
 }
+\details{
+By default \code{bnfimage} implements rate limitation through the
+\href{https://cran.r-project.org/package=ratelimitr}{\code{ratelimitr} package}.
+The query are limited to a maximum of 1 every 3 seconds to avoid being
+blocked by the BnF server. This is the limit at which the BnF server
+considers the queries to be malicious. For the moment this limitation
+cannot be lifted.
+}

@@ -225,6 +225,7 @@ several_met = lapply(several_ids, bi_metadata)
 str(several_met, max.level = 2)
 ```
 
+
 ## Accessing Both Images and Metadata - `bi_all_data()`
 
 The `bi_all_data()` function can be used to quickly retrieve both the images as
@@ -235,4 +236,10 @@ associated metadata in a third one:
 ```{r bi-all-data}
 bi_all_data(c("ark:/12148/bpt6k10411495/f11", "ark:/12148/bpt6k10411495/f12"),
             size = c(200, 200))
+```
+
+
+## Rate Limitation
+
+```{r child="../man/rmdchunks/_rate_limitation.Rmd"}
 ```
