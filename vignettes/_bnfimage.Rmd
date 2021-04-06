@@ -47,14 +47,14 @@ This displays a small portion of the image as by default this functions only ret
 To get the full image you can use the argument `region` with the value `"full"`:
 
 ```{r bi-image-region-full}
-bi_image("ark:/12148/bpt6k10411495/f11", region = "full", size = c(150, 150))
+bi_image("ark:/12148/bpt6k10411495/f11", region = "full", size = c(50, 50))
 ```
 
 Otherwise if you want to crop a specific region in the image you can define it as length 4 numeric vector specifiying the coordinates of the top left most point and the bottom right point. For example if you want to extract the image from 1250px x and 1300px y to 1600px x and 1650px y you would call:
 
 ```{r bi-image-region-crop}
 bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
-         size = c(160, 165))
+         size = c(48, 50))
 ```
 
 
@@ -66,7 +66,7 @@ that the extracted region is returned without being scaled.
 
 
 ```{r bi-image-size-full}
-bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
+bi_image("ark:/12148/bpt6k10411495/f11", region = c(1600, 1650, 100, 100),
          size = "full")
 ```
 
@@ -75,7 +75,7 @@ It can also be a numeric vector of lenth 2 that gives the size at which the extr
 
 ```{r bi-image-size-small}
 bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
-         size = c(25, 70))
+         size = c(25, 50))
 ```
 
 Other options exist in the [IIIF Image API](https://iiif.io/api/image/1.1/#4-2-size) but are not yet implemented in `bnfimage`.
@@ -89,17 +89,17 @@ Other options exist in the [IIIF Image API](https://iiif.io/api/image/1.1/#4-2-s
 ```{r bi-image-region-crop-rotation}
 # No rotation
 bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
-         size = c(80, 82),
+         size = c(40, 41),
          rotation = 0)
 
 # 90° clockwise rotation
 bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
-         size = c(80, 82),
+         size = c(40, 41),
          rotation = 90)
 
 # Non-multiple of 90° rotation
 bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
-         size = c(80, 82),
+         size = c(40, 41),
          rotation = 153)
 ```
 
@@ -119,22 +119,22 @@ It can take four values:
 ```{r bi-image-quality}
 # Native
 bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
-         size = c(160, 165),
+         size = c(48, 50),
          quality = "native")
 
 # Color
 bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
-         size = c(160, 165),
+         size = c(48, 50),
          quality = "color")
 
 # Grey
 bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
-         size = c(160, 165),
+         size = c(48, 50),
          quality = "gray")
 
 # Bitonal
 bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
-         size = c(160, 165),
+         size = c(48, 50),
          quality = "bitonal")
 ```
 
@@ -167,7 +167,7 @@ To save the images you can use the function `image_write()` in the `magick`
 package. `image_write()` can accept any image filetype:
 
 ```{r bi-image-save}
-img = bi_image("ark:/12148/bpt6k10411495/f11", size = c(160, 165),
+img = bi_image("ark:/12148/bpt6k10411495/f11", size = c(48, 50),
                region = c(1250, 1300, 1600, 1650))
 
 magick::image_write(img, "./my_image.png")
@@ -187,7 +187,7 @@ several_ids = c("ark:/12148/bpt6k10411495/f11", "ark:/12148/bpt6k10411495/f13",
                 "ark:/12148/bpt6k10411495/f15")
 
 several_imgs = lapply(several_ids, bi_image, region = "full",
-                      size = c(200, 200))
+                      size = c(50, 50))
 
 several_imgs
 ```
@@ -237,7 +237,7 @@ associated metadata in a third one:
 
 ```{r bi-all-data}
 bi_all_data(c("ark:/12148/bpt6k10411495/f11", "ark:/12148/bpt6k10411495/f12"),
-            size = c(200, 200))
+            size = c(50, 50))
 ```
 
 
