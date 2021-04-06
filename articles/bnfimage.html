@@ -107,14 +107,14 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <p>This displays a small portion of the image as by default this functions only returns the top left corner of the image from 0 to 500px in both directions.</p>
 <p>To get the full image you can use the argument <code>region</code> with the value <code>"full"</code>:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/bi_image.html">bi_image</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, region <span class="op">=</span> <span class="st">"full"</span>, size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">150</span>, <span class="fl">150</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/bi_image.html">bi_image</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, region <span class="op">=</span> <span class="st">"full"</span>, size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">50</span>, <span class="fl">50</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="bi-image-region-full-1.png" alt=""><p class="caption">plot of chunk bi-image-region-full</p>
 </div>
 <p>Otherwise if you want to crop a specific region in the image you can define it as length 4 numeric vector specifiying the coordinates of the top left most point and the bottom right point. For example if you want to extract the image from 1250px x and 1300px y to 1600px x and 1650px y you would call:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/bi_image.html">bi_image</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1250</span>, <span class="fl">1300</span>, <span class="fl">1600</span>, <span class="fl">1650</span><span class="op">)</span>,
-         size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">160</span>, <span class="fl">165</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+         size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">48</span>, <span class="fl">50</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="bi-image-region-crop-1.png" alt=""><p class="caption">plot of chunk bi-image-region-crop</p>
 </div>
@@ -124,7 +124,7 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <a href="#image-size" class="anchor"></a>Image size</h3>
 <p>As you noticed previous commands specified a <code>size</code> argument. It corresponds to the size of the extracted image. It can be equal to <code>"full"</code> so that the extracted region is returned without being scaled.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/bi_image.html">bi_image</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1250</span>, <span class="fl">1300</span>, <span class="fl">1600</span>, <span class="fl">1650</span><span class="op">)</span>,
+<code class="sourceCode R"><span class="fu"><a href="../reference/bi_image.html">bi_image</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1600</span>, <span class="fl">1650</span>, <span class="fl">100</span>, <span class="fl">100</span><span class="op">)</span>,
          size <span class="op">=</span> <span class="st">"full"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="bi-image-size-full-1.png" alt=""><p class="caption">plot of chunk bi-image-size-full</p>
@@ -132,7 +132,7 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <p>It can also be a numeric vector of lenth 2 that gives the size at which the extracted region should be scaled:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/bi_image.html">bi_image</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1250</span>, <span class="fl">1300</span>, <span class="fl">1600</span>, <span class="fl">1650</span><span class="op">)</span>,
-         size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">25</span>, <span class="fl">70</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+         size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">25</span>, <span class="fl">50</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="bi-image-size-small-1.png" alt=""><p class="caption">plot of chunk bi-image-size-small</p>
 </div>
@@ -145,7 +145,7 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># No rotation</span>
 <span class="fu"><a href="../reference/bi_image.html">bi_image</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1250</span>, <span class="fl">1300</span>, <span class="fl">1600</span>, <span class="fl">1650</span><span class="op">)</span>,
-         size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">80</span>, <span class="fl">82</span><span class="op">)</span>,
+         size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">40</span>, <span class="fl">41</span><span class="op">)</span>,
          rotation <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="bi-image-region-crop-rotation-1.png" alt=""><p class="caption">plot of chunk bi-image-region-crop-rotation</p>
@@ -154,7 +154,7 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <code class="sourceCode R">
 <span class="co"># 90° clockwise rotation</span>
 <span class="fu"><a href="../reference/bi_image.html">bi_image</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1250</span>, <span class="fl">1300</span>, <span class="fl">1600</span>, <span class="fl">1650</span><span class="op">)</span>,
-         size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">80</span>, <span class="fl">82</span><span class="op">)</span>,
+         size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">40</span>, <span class="fl">41</span><span class="op">)</span>,
          rotation <span class="op">=</span> <span class="fl">90</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="bi-image-region-crop-rotation-2.png" alt=""><p class="caption">plot of chunk bi-image-region-crop-rotation</p>
@@ -163,7 +163,7 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <code class="sourceCode R">
 <span class="co"># Non-multiple of 90° rotation</span>
 <span class="fu"><a href="../reference/bi_image.html">bi_image</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1250</span>, <span class="fl">1300</span>, <span class="fl">1600</span>, <span class="fl">1650</span><span class="op">)</span>,
-         size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">80</span>, <span class="fl">82</span><span class="op">)</span>,
+         size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">40</span>, <span class="fl">41</span><span class="op">)</span>,
          rotation <span class="op">=</span> <span class="fl">153</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="bi-image-region-crop-rotation-3.png" alt=""><p class="caption">plot of chunk bi-image-region-crop-rotation</p>
@@ -186,7 +186,7 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Native</span>
 <span class="fu"><a href="../reference/bi_image.html">bi_image</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1250</span>, <span class="fl">1300</span>, <span class="fl">1600</span>, <span class="fl">1650</span><span class="op">)</span>,
-         size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">160</span>, <span class="fl">165</span><span class="op">)</span>,
+         size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">48</span>, <span class="fl">50</span><span class="op">)</span>,
          quality <span class="op">=</span> <span class="st">"native"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="bi-image-quality-1.png" alt=""><p class="caption">plot of chunk bi-image-quality</p>
@@ -195,7 +195,7 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <code class="sourceCode R">
 <span class="co"># Color</span>
 <span class="fu"><a href="../reference/bi_image.html">bi_image</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1250</span>, <span class="fl">1300</span>, <span class="fl">1600</span>, <span class="fl">1650</span><span class="op">)</span>,
-         size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">160</span>, <span class="fl">165</span><span class="op">)</span>,
+         size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">48</span>, <span class="fl">50</span><span class="op">)</span>,
          quality <span class="op">=</span> <span class="st">"color"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="bi-image-quality-2.png" alt=""><p class="caption">plot of chunk bi-image-quality</p>
@@ -204,7 +204,7 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <code class="sourceCode R">
 <span class="co"># Grey</span>
 <span class="fu"><a href="../reference/bi_image.html">bi_image</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1250</span>, <span class="fl">1300</span>, <span class="fl">1600</span>, <span class="fl">1650</span><span class="op">)</span>,
-         size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">160</span>, <span class="fl">165</span><span class="op">)</span>,
+         size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">48</span>, <span class="fl">50</span><span class="op">)</span>,
          quality <span class="op">=</span> <span class="st">"gray"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="bi-image-quality-3.png" alt=""><p class="caption">plot of chunk bi-image-quality</p>
@@ -213,7 +213,7 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <code class="sourceCode R">
 <span class="co"># Bitonal</span>
 <span class="fu"><a href="../reference/bi_image.html">bi_image</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1250</span>, <span class="fl">1300</span>, <span class="fl">1600</span>, <span class="fl">1650</span><span class="op">)</span>,
-         size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">160</span>, <span class="fl">165</span><span class="op">)</span>,
+         size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">48</span>, <span class="fl">50</span><span class="op">)</span>,
          quality <span class="op">=</span> <span class="st">"bitonal"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="bi-image-quality-4.png" alt=""><p class="caption">plot of chunk bi-image-quality</p>
@@ -258,7 +258,7 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <a href="#saving-the-image" class="anchor"></a>Saving the image</h3>
 <p>To save the images you can use the function <code>image_write()</code> in the <code>magick</code> package. <code>image_write()</code> can accept any image filetype:</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">img</span> <span class="op">=</span> <span class="fu"><a href="../reference/bi_image.html">bi_image</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">160</span>, <span class="fl">165</span><span class="op">)</span>,
+<code class="sourceCode R"><span class="va">img</span> <span class="op">=</span> <span class="fu"><a href="../reference/bi_image.html">bi_image</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">48</span>, <span class="fl">50</span><span class="op">)</span>,
                region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1250</span>, <span class="fl">1300</span>, <span class="fl">1600</span>, <span class="fl">1650</span><span class="op">)</span><span class="op">)</span>
 
 <span class="fu">magick</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/magick/reference/editing.html">image_write</a></span><span class="op">(</span><span class="va">img</span>, <span class="st">"./my_image.png"</span><span class="op">)</span></code></pre></div>
@@ -274,26 +274,26 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
                 <span class="st">"ark:/12148/bpt6k10411495/f15"</span><span class="op">)</span>
 
 <span class="va">several_imgs</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">several_ids</span>, <span class="va">bi_image</span>, region <span class="op">=</span> <span class="st">"full"</span>,
-                      size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">200</span>, <span class="fl">200</span><span class="op">)</span><span class="op">)</span>
+                      size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">50</span>, <span class="fl">50</span><span class="op">)</span><span class="op">)</span>
 
 <span class="va">several_imgs</span>
 <span class="co">#&gt; [[1]]</span>
 <span class="co">#&gt; # A tibble: 1 x 7</span>
 <span class="co">#&gt;   format width height colorspace matte filesize density</span>
 <span class="co">#&gt;   &lt;chr&gt;  &lt;int&gt;  &lt;int&gt; &lt;chr&gt;      &lt;lgl&gt;    &lt;int&gt; &lt;chr&gt;  </span>
-<span class="co">#&gt; 1 JPEG     200    200 sRGB       FALSE     6432 400x400</span>
+<span class="co">#&gt; 1 JPEG      50     50 sRGB       FALSE     1480 400x400</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; [[2]]</span>
 <span class="co">#&gt; # A tibble: 1 x 7</span>
 <span class="co">#&gt;   format width height colorspace matte filesize density</span>
 <span class="co">#&gt;   &lt;chr&gt;  &lt;int&gt;  &lt;int&gt; &lt;chr&gt;      &lt;lgl&gt;    &lt;int&gt; &lt;chr&gt;  </span>
-<span class="co">#&gt; 1 JPEG     200    200 sRGB       FALSE     4926 400x400</span>
+<span class="co">#&gt; 1 JPEG      50     50 sRGB       FALSE     1154 400x400</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; [[3]]</span>
 <span class="co">#&gt; # A tibble: 1 x 7</span>
 <span class="co">#&gt;   format width height colorspace matte filesize density</span>
 <span class="co">#&gt;   &lt;chr&gt;  &lt;int&gt;  &lt;int&gt; &lt;chr&gt;      &lt;lgl&gt;    &lt;int&gt; &lt;chr&gt;  </span>
-<span class="co">#&gt; 1 JPEG     200    200 sRGB       FALSE     6086 400x400</span></code></pre></div>
+<span class="co">#&gt; 1 JPEG      50     50 sRGB       FALSE     1475 400x400</span></code></pre></div>
 <p>The arguments can be specified similarly to single calls to <code><a href="../reference/bi_image.html">bi_image()</a></code>.</p>
 </div>
 </div>
@@ -386,7 +386,7 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <p>The <code><a href="../reference/bi_all_data.html">bi_all_data()</a></code> function can be used to quickly retrieve both the images as well as the associated metadata of one or several images. The outputs stores the identifier of an image in a column, the actual image in a second one, and the associated metadata in a third one:</p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/bi_all_data.html">bi_all_data</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, <span class="st">"ark:/12148/bpt6k10411495/f12"</span><span class="op">)</span>,
-            size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">200</span>, <span class="fl">200</span><span class="op">)</span><span class="op">)</span>
+            size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">50</span>, <span class="fl">50</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 2 x 3</span>
 <span class="co">#&gt;   identifier                   image      metadata         </span>
 <span class="co">#&gt;   &lt;chr&gt;                        &lt;list&gt;     &lt;list&gt;           </span>
