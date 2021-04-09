@@ -21,7 +21,11 @@ with \code{"ark:/"}}
 \item{region}{[\code{character(1)} or \code{integer(4)}]\cr{}
 either \code{"full"} to retrieve the full image or a vector of
 four integers that defines the region to extract from the
-image}
+image. The vector has the form \verb{(x0, y0, w, h)} with
+\verb{x0, y0} the coordinates of the top left point of
+the extracted region (with the origin at the top left of
+the image), \code{w} the width of the extracted region and
+\code{h} the height of the extracted region.}
 
 \item{size}{[\code{character(1)} or \code{integer(2)}]\cr{}
 either \code{"full"} to retrieve the full region or a vector of

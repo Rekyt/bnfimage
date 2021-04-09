@@ -5,7 +5,11 @@
 #' @param region     \[`character(1)` or `integer(4)`\]\cr{}
 #'                   either `"full"` to retrieve the full image or a vector of
 #'                   four integers that defines the region to extract from the
-#'                   image
+#'                   image. The vector has the form `(x0, y0, w, h)` with
+#'                   `x0, y0` the coordinates of the top left point of
+#'                   the extracted region (with the origin at the top left of
+#'                   the image), `w` the width of the extracted region and
+#'                   `h` the height of the extracted region.
 #' @param size       \[`character(1)` or `integer(2)`\]\cr{}
 #'                   either `"full"` to retrieve the full region or a vector of
 #'                   two integers that defines the size of the final image

@@ -50,11 +50,10 @@ To get the full image you can use the argument `region` with the value `"full"`:
 bi_image("ark:/12148/bpt6k10411495/f11", region = "full", size = c(50, 50))
 ```
 
-Otherwise if you want to crop a specific region in the image you can define it as length 4 numeric vector specifiying the coordinates of the top left most point and the bottom right point. For example if you want to extract the image from 1250px x and 1300px y to 1600px x and 1650px y you would call:
+Otherwise if you want to crop a specific region in the image you can define it as length 4 numeric vector specifiying the coordinates of the top left most point and the size of the extracted region in the form `x0, y0, w, h`. For example if you want to extract the image from 1250px x and 1300px y of 60px large and 50px high you would call:
 
 ```{r bi-image-region-crop}
-bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
-         size = c(48, 50))
+bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 60, 50))
 ```
 
 

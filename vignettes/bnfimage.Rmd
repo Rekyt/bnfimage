@@ -51,12 +51,11 @@ bi_image("ark:/12148/bpt6k10411495/f11", region = "full", size = c(50, 50))
 
 ![plot of chunk bi-image-region-full](./bi-image-region-full-1.png)
 
-Otherwise if you want to crop a specific region in the image you can define it as length 4 numeric vector specifiying the coordinates of the top left most point and the bottom right point. For example if you want to extract the image from 1250px x and 1300px y to 1600px x and 1650px y you would call:
+Otherwise if you want to crop a specific region in the image you can define it as length 4 numeric vector specifiying the coordinates of the top left most point and the size of the extracted region in the form `x0, y0, w, h`. For example if you want to extract the image from 1250px x and 1300px y of 60px large and 50px high you would call:
 
 
 ```r
-bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 1600, 1650),
-         size = c(48, 50))
+bi_image("ark:/12148/bpt6k10411495/f11", region = c(1250, 1300, 60, 50))
 ```
 
 ![plot of chunk bi-image-region-crop](./bi-image-region-crop-1.png)
@@ -366,11 +365,7 @@ associated metadata in a third one:
 ```r
 bi_all_data(c("ark:/12148/bpt6k10411495/f11", "ark:/12148/bpt6k10411495/f12"),
             size = c(50, 50))
-#> # A tibble: 2 x 3
-#>   identifier                   image      metadata         
-#>   <chr>                        <list>     <list>           
-#> 1 ark:/12148/bpt6k10411495/f11 <magck-mg> <named list [13]>
-#> 2 ark:/12148/bpt6k10411495/f12 <magck-mg> <named list [13]>
+#> Error in curl::curl_fetch_memory(url, handle = handle): Timeout was reached: [gallica.bnf.fr] Connection timed out after 10002 milliseconds
 ```
 
 
