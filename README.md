@@ -13,7 +13,7 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lif
 <!-- badges: end -->
 
 `bnfimage` is an R client for the [BnF images
-API](http://api.bnf.fr/api-iiif-de-recuperation-des-images-de-gallica).
+API](https://api.bnf.fr/api-iiif-de-recuperation-des-images-de-gallica).
 The Bibliothèque Nationale de France (BnF), has a online repository
 called [Gallica](https://gallica.bnf.fr/) containing millions of scanned
 documents. The BnF offers an API to access all the images
