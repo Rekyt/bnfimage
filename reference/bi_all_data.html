@@ -145,7 +145,11 @@ with <code>"ark:/"</code></p></td>
       <td><p>[<code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> or <code><a href='https://rdrr.io/r/base/integer.html'>integer(4)</a></code>]<br />
 either <code>"full"</code> to retrieve the full image or a vector of
 four integers that defines the region to extract from the
-image</p></td>
+image. The vector has the form <code>(x0, y0, w, h)</code> with
+<code>x0, y0</code> the coordinates of the top left point of
+the extracted region (with the origin at the top left of
+the image), <code>w</code> the width of the extracted region and
+<code>h</code> the height of the extracted region.</p></td>
     </tr>
     <tr>
       <th>size</th>

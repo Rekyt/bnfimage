@@ -111,10 +111,9 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <div class="figure">
 <img src="bi-image-region-full-1.png" alt=""><p class="caption">plot of chunk bi-image-region-full</p>
 </div>
-<p>Otherwise if you want to crop a specific region in the image you can define it as length 4 numeric vector specifiying the coordinates of the top left most point and the bottom right point. For example if you want to extract the image from 1250px x and 1300px y to 1600px x and 1650px y you would call:</p>
+<p>Otherwise if you want to crop a specific region in the image you can define it as length 4 numeric vector specifiying the coordinates of the top left most point and the size of the extracted region in the form <code>x0, y0, w, h</code>. For example if you want to extract the image from 1250px x and 1300px y of 60px large and 50px high you would call:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/bi_image.html">bi_image</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1250</span>, <span class="fl">1300</span>, <span class="fl">1600</span>, <span class="fl">1650</span><span class="op">)</span>,
-         size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">48</span>, <span class="fl">50</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/bi_image.html">bi_image</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1250</span>, <span class="fl">1300</span>, <span class="fl">60</span>, <span class="fl">50</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="bi-image-region-crop-1.png" alt=""><p class="caption">plot of chunk bi-image-region-crop</p>
 </div>
@@ -387,11 +386,7 @@ knitr::knit("vignettes/_bnfimage.Rmd", output = "vignettes/bnfimage.Rmd")
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/bi_all_data.html">bi_all_data</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ark:/12148/bpt6k10411495/f11"</span>, <span class="st">"ark:/12148/bpt6k10411495/f12"</span><span class="op">)</span>,
             size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">50</span>, <span class="fl">50</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 2 x 3</span>
-<span class="co">#&gt;   identifier                   image      metadata         </span>
-<span class="co">#&gt;   &lt;chr&gt;                        &lt;list&gt;     &lt;list&gt;           </span>
-<span class="co">#&gt; 1 ark:/12148/bpt6k10411495/f11 &lt;magck-mg&gt; &lt;named list [13]&gt;</span>
-<span class="co">#&gt; 2 ark:/12148/bpt6k10411495/f12 &lt;magck-mg&gt; &lt;named list [13]&gt;</span></code></pre></div>
+<span class="co">#&gt; Error in curl::curl_fetch_memory(url, handle = handle): Timeout was reached: [gallica.bnf.fr] Connection timed out after 10002 milliseconds</span></code></pre></div>
 </div>
 <div id="rate-limitation" class="section level1">
 <h1 class="hasAnchor">
