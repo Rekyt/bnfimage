@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 [![CRAN-version](https://www.r-pkg.org/badges/version/bnfimage)](https://cran.r-project.org/package=bnfimage)
 <!-- badges: end -->
 
-`bnfimage` is an R client for the [BnF images API](http://api.bnf.fr/api-iiif-de-recuperation-des-images-de-gallica).
+`bnfimage` is an R client for the [BnF images API](https://api.bnf.fr/api-iiif-de-recuperation-des-images-de-gallica).
 The Bibliothèque Nationale de France (BnF), has a online repository called [Gallica](https://gallica.bnf.fr/) containing millions of scanned documents. The BnF offers an API to access all the images programmatically, `bnfimage` lets you access it through R.
 
 The BnF Image API is implemented following the [International Image Interoperability Framework](https://iiif.io/) (IIIF) with Image API implemented using v.1.1, the Presentation API implemented using v.2.0, and the Search API not yet implemented.

@@ -10,13 +10,12 @@ Description: Provides an R client for the image API of the Bibliothèque
     Nationale de France (BnF, National Library of France).
 License: GPL-3
 Encoding: UTF-8
-LazyData: true
 Imports: 
     httr,
     magick,
     tibble,
     ratelimitr
-URL: https://rekyt.github.io/bnfimage, https://github.com/Rekyt/bnfimage
+URL: https://rekyt.github.io/bnfimage/, https://github.com/Rekyt/bnfimage/
 BugReports: https://github.com/Rekyt/bnfimage/issues
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
