@@ -9,3 +9,5 @@
 ^.travis.yml$
 ^vignettes/_bnfimage.Rmd$
 ^\.github$
+^CRAN-RELEASE$
+^cran-comments\.md$
