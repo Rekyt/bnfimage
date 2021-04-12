@@ -97,6 +97,19 @@
   rotation   <span class="op">=</span> <span class="fl">0</span>,
   quality    <span class="op">=</span> <span class="st">"native"</span>,
   format     <span class="op">=</span> <span class="st">"png"</span><span class="op">)</span>
+<span class="co">#&gt; Called from: bi_image(identifier = "ark:/12148/btv1b9055204k/f1", region = "full", </span>
+<span class="co">#&gt;     size = c(1500, 750), rotation = 0, quality = "native", format = "png")</span>
+<span class="co">#&gt; debug: bi_query = bi_GET(identifier, region, size, rotation, paste0(quality, </span>
+<span class="co">#&gt;     ".", format))</span>
+<span class="co">#&gt; debug: if (bi_query$status_code == 503) {</span>
+<span class="co">#&gt;     stop("The API could not be reached, please try again later")</span>
+<span class="co">#&gt; } else if (bi_query$status_code == 500) {</span>
+<span class="co">#&gt;     stop("The query gave no answer. Please try another query")</span>
+<span class="co">#&gt; }</span>
+<span class="co">#&gt; debug: if (bi_query$status_code == 500) {</span>
+<span class="co">#&gt;     stop("The query gave no answer. Please try another query")</span>
+<span class="co">#&gt; }</span>
+<span class="co">#&gt; debug: magick::image_read(bi_query$content)</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">eiffel_tower</span><span class="op">)</span>
 <span class="co">#&gt; Class 'magick-image' &lt;externalptr&gt;</span>
@@ -142,6 +155,18 @@
 <p>You can query both data and associated metadata using the <code><a href="reference/bi_all_data.html">bi_all_data()</a></code> function and get a nicely formatted tibble:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/bi_all_data.html">bi_all_data</a></span><span class="op">(</span><span class="st">"ark:/12148/btv1b9055204k/f1"</span>, size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">7</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; Called from: bi_image(single_id, region, size, rotation, quality, format)</span>
+<span class="co">#&gt; debug: bi_query = bi_GET(identifier, region, size, rotation, paste0(quality, </span>
+<span class="co">#&gt;     ".", format))</span>
+<span class="co">#&gt; debug: if (bi_query$status_code == 503) {</span>
+<span class="co">#&gt;     stop("The API could not be reached, please try again later")</span>
+<span class="co">#&gt; } else if (bi_query$status_code == 500) {</span>
+<span class="co">#&gt;     stop("The query gave no answer. Please try another query")</span>
+<span class="co">#&gt; }</span>
+<span class="co">#&gt; debug: if (bi_query$status_code == 500) {</span>
+<span class="co">#&gt;     stop("The query gave no answer. Please try another query")</span>
+<span class="co">#&gt; }</span>
+<span class="co">#&gt; debug: magick::image_read(bi_query$content)</span>
 <span class="co">#&gt; # A tibble: 1 x 3</span>
 <span class="co">#&gt;   identifier                  image      metadata         </span>
 <span class="co">#&gt;   &lt;chr&gt;                       &lt;list&gt;     &lt;list&gt;           </span>
@@ -169,12 +194,12 @@
 <div id="information_source-related-projects" class="section level2">
 <h2 class="hasAnchor">
 <a href="#information_source-related-projects" class="anchor"></a>:information_source: Related projects</h2>
-<p><a href="GuillaumePressiat/gargallica"><code>gargallica</code></a> is a collection of script and functions to retrieve data from the regular Gallica API.</p>
+<p><a href="https://github.com/GuillaumePressiat/gargallica"><code>gargallica</code></a> is a collection of script and functions to retrieve data from the regular Gallica API.</p>
 </div>
 <div id="speech_balloon-code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
 <a href="#speech_balloon-code-of-conduct" class="anchor"></a>:speech_balloon: Code of Conduct</h2>
-<p>Please note that the <code>bnfimage</code> project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<p>Please note that the <code>bnfimage</code> project is released with a <a href="https://github.com/Rekyt/bnfimage/blob/master/CODE_OF_CONDUCT.md">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
   </div>
