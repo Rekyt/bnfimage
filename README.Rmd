@@ -88,10 +88,10 @@ As a general rule, non-commercial reuse is free of charge but the source should 
 
 ## :information_source: Related projects
 
-[`gargallica`](GuillaumePressiat/gargallica) is a collection of script and functions to retrieve data from the regular Gallica API.
+[`gargallica`](https://github.com/GuillaumePressiat/gargallica) is a collection of script and functions to retrieve data from the regular Gallica API.
 
 ## :speech_balloon: Code of Conduct
 
 Please note that the `bnfimage` project is released with a
-[Contributor Code of Conduct](CODE_OF_CONDUCT.md).
+[Contributor Code of Conduct](https://github.com/Rekyt/bnfimage/blob/master/CODE_OF_CONDUCT.md).
 By contributing to this project, you agree to abide by its terms.
