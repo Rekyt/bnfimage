@@ -45,6 +45,19 @@ eiffel_tower = bi_image(
   rotation   = 0,
   quality    = "native",
   format     = "png")
+#> Called from: bi_image(identifier = "ark:/12148/btv1b9055204k/f1", region = "full", 
+#>     size = c(1500, 750), rotation = 0, quality = "native", format = "png")
+#> debug: bi_query = bi_GET(identifier, region, size, rotation, paste0(quality, 
+#>     ".", format))
+#> debug: if (bi_query$status_code == 503) {
+#>     stop("The API could not be reached, please try again later")
+#> } else if (bi_query$status_code == 500) {
+#>     stop("The query gave no answer. Please try another query")
+#> }
+#> debug: if (bi_query$status_code == 500) {
+#>     stop("The query gave no answer. Please try another query")
+#> }
+#> debug: magick::image_read(bi_query$content)
 
 str(eiffel_tower)
 #> Class 'magick-image' <externalptr>
@@ -99,6 +112,18 @@ You can query both data and associated metadata using the
 
 ``` r
 bi_all_data("ark:/12148/btv1b9055204k/f1", size = c(15, 7))
+#> Called from: bi_image(single_id, region, size, rotation, quality, format)
+#> debug: bi_query = bi_GET(identifier, region, size, rotation, paste0(quality, 
+#>     ".", format))
+#> debug: if (bi_query$status_code == 503) {
+#>     stop("The API could not be reached, please try again later")
+#> } else if (bi_query$status_code == 500) {
+#>     stop("The query gave no answer. Please try another query")
+#> }
+#> debug: if (bi_query$status_code == 500) {
+#>     stop("The query gave no answer. Please try another query")
+#> }
+#> debug: magick::image_read(bi_query$content)
 #> # A tibble: 1 x 3
 #>   identifier                  image      metadata         
 #>   <chr>                       <list>     <list>           
@@ -139,11 +164,13 @@ list](https://www.bnf.fr/fr/faire-une-utilisation-commerciale-dune-reproduction)
 
 ## :information\_source: Related projects
 
-[`gargallica`](GuillaumePressiat/gargallica) is a collection of script
-and functions to retrieve data from the regular Gallica API.
+[`gargallica`](https://github.com/GuillaumePressiat/gargallica) is a
+collection of script and functions to retrieve data from the regular
+Gallica API.
 
 ## :speech\_balloon: Code of Conduct
 
 Please note that the `bnfimage` project is released with a [Contributor
-Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project,
-you agree to abide by its terms.
+Code of
+Conduct](https://github.com/Rekyt/bnfimage/blob/master/CODE_OF_CONDUCT.md).
+By contributing to this project, you agree to abide by its terms.
