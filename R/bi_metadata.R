@@ -2,6 +2,10 @@
 #'
 #' @inheritParams bi_image
 #' @includeRmd man/rmdchunks/_rate_limitation.Rmd
+#'
+#' @return A nested list which contains the metadata of a single element.
+#'   The list is for now not formatted and provide the full metadata returned
+#'   by the API.
 #' @export
 bi_metadata = function(identifier = NULL) {
   if (is.null(identifier)) {

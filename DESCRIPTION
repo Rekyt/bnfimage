@@ -1,13 +1,14 @@
 Package: bnfimage
-Title: BnF Image API Client
-Version: 0.0.1
+Title: 'BnF Image API' Client
+Version: 0.1.0
 Authors@R: 
     person("Matthias", "Grenié",
            email = "matthias.grenie@gmail.com",
            role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-4659-7522"))
-Description: Provides an R client for the image API of the Bibliothèque
-    Nationale de France (BnF, National Library of France).
+Description: Provides an R client for the image API of 'Bibliothèque
+    Nationale de France' (BnF, National Library of France)
+    <https://api.bnf.fr/api-iiif-de-recuperation-des-images-de-gallica#/>.
 License: GPL-3
 Encoding: UTF-8
 Imports: 

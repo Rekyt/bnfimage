@@ -10,6 +10,11 @@ bi_metadata(identifier = NULL)
 \item{identifier}{[\code{character(1)}]\cr{}
 identifier of the document that begins with \code{"ark:/"}}
 }
+\value{
+A nested list which contains the metadata of a single element.
+The list is for now not formatted and provide the full metadata returned
+by the API.
+}
 \description{
 Retrieve BnF image metadata
 }
